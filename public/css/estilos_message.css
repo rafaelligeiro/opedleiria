@@ -73,17 +73,21 @@ body{
 }
 
 .inputs input{
-    background-color: unset;
+    background-color: #d9d9d9;
+    border-radius: 10px;
     width: 300px;
     border: 0;
-    padding-left: 5px;
+    padding-left: 10px;
+    height: 30px;
 }
 
 .mail input{
-    background-color: unset;
+    background-color: #d9d9d9;
+    border-radius: 10px;
     width: 300px;
+    height: 30px;
     border: 0;
-    padding-left: 5px;
+    padding-left: 10px;
 }
 
 
@@ -107,13 +111,14 @@ body{
 }
 
 .bubble textarea{
-    background-color: unset;
+    background-color: #d9d9d9;
+    border-radius: 10px;
     width: 300px;
     border-radius: 5px;
     border: 0;
     resize: none;
     height: 150px;
-    padding-left: 5px;
+    padding-left: 10px;
 }
 
 
@@ -125,13 +130,14 @@ body{
 
 .botao button{
     background-color: #0C6A6A;
-    border-radius: 25px;
     border: 0;
     color: white;
     font-weight: bold;
     font-size: 16px;
     width: 250px;
     height: 40px;
+    -webkit-box-shadow: 11px 10px 16px -11px #000000;
+    box-shadow: 11px 10px 16px -11px #000000;
 }
 
 .botao button:hover{
