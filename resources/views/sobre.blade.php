@@ -3,8 +3,9 @@
 @section('title', 'Sobre o OPEDLeiria')
 
 @section('styles')
-<link rel="stylesheet" href="{{asset('css/estilos_sobre.css')}}">
 @vite('resources/css/app.css')
+<link rel="stylesheet" href="{{asset('css/estilos_sobre.css')}}">
+
 @endsection
 
 @section('content')
