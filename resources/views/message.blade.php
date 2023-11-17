@@ -25,11 +25,11 @@
                         <img src="{{asset('img/user.png')}}" alt="nome">
                         <input type="text" name="nome" placeholder="O seu nome">
                     </div>
-                    <div class="inputs">
+                    <div class="mail">
                         <img src="{{asset('img/mail.png')}}" alt="nome">
                         <input type="text" name="nome" placeholder="O seu email">
                     </div>
-                    <div class="inputs">
+                    <div class="bubble">
                         <img src="{{asset('img/bubble.png')}}" alt="nome">
                         <textarea type="text" name="nome" placeholder="O seu email"></textarea>
                     </div>

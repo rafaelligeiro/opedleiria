@@ -15,9 +15,11 @@ body{
 }
 
 .form-divided{
+    background-color: #0C6A6A;
+    border-radius: 20px;
+    overflow: hidden;
     height: 500px;
     width: 850px;
-    position: relative;
     display: flex;
 }
 
@@ -30,12 +32,12 @@ body{
 
 .oped{
     width: fit-content;
-    margin: 0 auto;
+    margin: 20px auto 0 auto;
 }
 .oped h1{
-    margin-left: 8%;
     color: #29B5B6;
     font-weight: bold;
+    font-size: 50px;
 }
 
 .oped span{
@@ -53,31 +55,65 @@ body{
     width: fit-content;
     margin: 50px auto;
     display: flex;
+    align-items: center;
+}
+
+.mail{
+    width: fit-content;
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+}
+
+.bubble{
+    width: fit-content;
+    margin: 50px auto;
+    display: flex;
+    align-items: start;
 }
 
 .inputs input{
     background-color: unset;
     width: 300px;
-    border-top: 0;
-    border-inline: 0;
+    border: 0;
+    padding-left: 5px;
 }
+
+.mail input{
+    background-color: unset;
+    width: 300px;
+    border: 0;
+    padding-left: 5px;
+}
+
+
 
 .inputs img{
     width: 32px;
     height: auto;
-    align-self: baseline;
     padding-right: 15px;
 }
 
-.inputs textarea{
+.mail img{
+    width: 32px;
+    height: auto;
+    padding-right: 15px;
+}
+
+.bubble img{
+    width: 32px;
+    height: auto;
+    padding-right: 15px;
+}
+
+.bubble textarea{
     background-color: unset;
     width: 300px;
     border-radius: 5px;
-    border: 2px solid rgb(102, 101, 101);
+    border: 0;
     resize: none;
     height: 150px;
-    padding-top: 10px;
-    padding-left: 10px;
+    padding-left: 5px;
 }
 
 
