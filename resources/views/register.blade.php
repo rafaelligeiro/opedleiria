@@ -4,12 +4,12 @@
 
 <body class="bg-[#eaeaea] font-poppins">
     <div
-        class="flex m-auto justify-center items-center flex-col max-w-[1200px]"
+        class="flex m-auto justify-center items-center flex-col md:max-w-[1200px] max-w-[95%]"
     >
-        <div class="w-1/2 m-auto">
-            <h1 class="text-4xl font-bold my-24 text-center">Registar Conta</h1>
+        <div class="md:w-1/2 w-full m-auto">
+            <h1 class="text-4xl font-bold md:my-24 my-12 text-center">Registar Conta</h1>
             <form class="my-8">
-                <div class="flex justify-between gap-2">
+                <div class="flex justify-between gap-2 md:flex-row flex-col">
                     <div class="w-full">
                         <label
                             for=""
@@ -86,7 +86,7 @@
                         placeholder="valentim@opedleiria.pt"
                     />
                 </div>
-                <div class="flex justify-between gap-2">
+                <div class="flex justify-between gap-2 md:flex-row flex-col">
                     <div class="w-full">
                         <label
                             for=""
@@ -127,9 +127,8 @@
                     <div class="w-full">
                         <label
                             for=""
-                            class="block my-2 text-sm font-medium text-gray-900"
-                            >Confirmar Palavra-Passe</label
-                        >
+                            class="block my-2 text-sm font-medium text-gray-900 "
+                            >Confirmar Palavra-Passe</label>
                         <div class="relative mb-2">
                             <div
                                 class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none"

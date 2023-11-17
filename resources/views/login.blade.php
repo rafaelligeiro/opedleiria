@@ -3,10 +3,10 @@
 @section('content')
 <body class="bg-[#eaeaea] font-poppins">
     <div
-        class="flex m-auto justify-center items-center flex-col max-w-[1200px]"
+        class="flex m-auto justify-center items-center flex-col md:max-w-[1200px] max-w-[95%]"
     >
-    <div class="w-1/2 m-auto">
-        <h1 class="text-4xl font-bold my-24 text-center">Entrar na Conta</h1>
+    <div class="md:w-1/2 w-full m-auto">
+        <h1 class="text-4xl font-bold md:my-24 my-12 text-center">Entrar na Conta</h1>
         <form class="my-8">
             <label for="" class="block my-2 text-sm font-medium text-gray-900"
                 >Endereço Email</label
