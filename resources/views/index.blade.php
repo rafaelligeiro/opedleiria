@@ -1,14 +1,9 @@
 @extends ('layout.master')
 
-@section('title', '..')
+@section('title', 'Bem-Vindo ao OPEDLeiria')
 
 @section('styles')
   <link rel="stylesheet" href="{{asset('css/index.css')}}">
-  <!--
-        opcional
-        <link rel="stylesheet" href="style_message.css">
-
-    -->
 @endsection
 
 @section('content')
