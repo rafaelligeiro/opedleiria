@@ -31,7 +31,7 @@
                     </div>
                     <div class="bubble">
                         <img src="{{asset('img/bubble.png')}}" alt="nome">
-                        <textarea type="text" name="nome" placeholder="O seu email"></textarea>
+                        <textarea type="text" name="nome" placeholder="A sua mensagem"></textarea>
                     </div>
                     <div class="botao">
                         <a href="#"><button>Enviar Mensagem</button></a>
