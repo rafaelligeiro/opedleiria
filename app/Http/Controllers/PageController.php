@@ -12,4 +12,7 @@ class PageController extends Controller
     public function sobre(){
         return view('sobre');
     }
+    public function eventos(){
+        return view('eventos');
+    }
 }
