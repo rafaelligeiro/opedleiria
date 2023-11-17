@@ -1,17 +1,15 @@
 #navbarAll{
     margin: 0 auto;
-    width: 80%;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    background-color: rgba(185, 185, 185, 0.2) !important;
+    width: 100%;
+    background-color: #F1F1F1 !important;
     backdrop-filter: blur(5px) !important;
 }
 
 
 .logo{
-    width: 64px;
+    width: 75px;
     height: auto;
-    
+
 }
 
 #links{
@@ -21,6 +19,11 @@
 #navbarCompleta{
     margin: 0 auto;
     justify-content: center;
+    padding-right: 10%;
+}
+
+.container-fluid{
+    padding-left: 10%;
 }
 
 #pesquisa{

@@ -6,7 +6,7 @@ body{
 .navbar {
     background-color: #F1F1F1 !important;
 }
-  
+
 .nav-item:hover{
     color: #0C6A6A !important;
 }
@@ -25,7 +25,7 @@ section.header{
 
 h1 {
     margin: 0;
-    font-size: 70px;
+    font-size: 60px;
     color: #274C5B;
     font-weight: bold;
 }
@@ -40,7 +40,7 @@ section.cards {
     background-color: #f8f9fa; /* Cor de fundo da seção */
     padding: 20px;
     margin-bottom: 70px;
-    
+
 }
 
 .card {
@@ -75,31 +75,30 @@ section.cards {
 .card-content h3{
     font-size: 18px;
     font-weight: bold;
-    color: #274C5B;
+    color: #0C6A6A;
 }
 
-.btn {
+.card-content .btn {
     background-color: #274C5B;
     border-color: #274C5B;
     color: #f8f9fa;
     padding: 8px 12px;
-    border-radius: 30px;
+    border-radius: 15px;
     cursor: pointer;
     font-size: 13px;
     text-align: center;
     position: relative;
+    margin-left: 2px;
 }
-.btn i {
+.card-content .btn i {
     right: 10px;
     transition: opacity 0.3s ease-in-out;
     color: #f8f9fa;
 }
 
-.btn:hover {
+.card-content .btn:hover {
     background-color: white;
     border: 1px solid #274C5B;
     color: #0C6A6A;
 }
-.btn:hover i {
-    color: #0C6A6A;
-}
+

@@ -15,7 +15,7 @@
                     <a class="nav-link" href="{{route('sobre')}}">Sobre</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Eventos</a>
+                    <a class="nav-link" href="{{route('eventos')}}">Eventos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" aria-disabled="true">Loja</a>

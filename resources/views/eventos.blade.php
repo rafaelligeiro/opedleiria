@@ -18,7 +18,7 @@
 
 <section class="cards">
     <div class="card">
-        <img src="img/caminhada.jpg" alt="Evento 1">
+        <img src="{{ asset('img/caminhada.jpg') }}" alt="Evento 1">
         <div class="card-content">
             <h3>Caminhada pela Saúde Mental</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent maximus mauris at iaculis faucibus. Lorem ipsum dolor sit amet, consectetur</p>
@@ -27,7 +27,7 @@
     </div>
 
     <div class="card">
-        <img src="img/sao_martinho.jpg" alt="Evento 2">
+        <img src="{{ asset('img/sao_martinho.jpg') }}" alt="Evento 2">
         <div class="card-content">
             <h3>São Martinho</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent maximus mauris at iaculis faucibus. Lorem ipsum dolor sit amet, consectetur</p>
@@ -36,7 +36,7 @@
     </div>
 
     <div class="card">
-        <img src="img/parque.jpeg" alt="Evento 3">
+        <img src="{{ asset('img/parque.jpeg') }}" alt="Evento 3">
         <div class="card-content">
             <h3>Evento Solidário no Parque</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent maximus mauris at iaculis faucibus. Lorem ipsum dolor sit amet, consectetur</p>
@@ -47,7 +47,7 @@
 
 <section class="cards">
     <div class="card">
-        <img src="img/Natal.jpg" alt="Evento 1">
+        <img src="{{ asset('img/Natal.jpg') }}" alt="Evento 1">
         <div class="card-content">
             <h3>Gala de Natal OPEDLeiria</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent maximus mauris at iaculis faucibus. Lorem ipsum dolor sit amet, consectetur</p>
@@ -56,7 +56,7 @@
     </div>
 
     <div class="card">
-        <img src="img/carnaval.jpg" alt="Evento 2">
+        <img src="{{ asset('img/carnaval.jpg') }}" alt="Evento 2">
         <div class="card-content">
             <h3>Carnaval Especial</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent maximus mauris at iaculis faucibus. Lorem ipsum dolor sit amet, consectetur</p>
@@ -65,7 +65,7 @@
     </div>
 
     <div class="card">
-        <img src="img/Pascoa.jpeg" alt="Evento 3">
+        <img src="{{ asset('img/Pascoa.jpeg') }}" alt="Evento 3">
         <div class="card-content">
             <h3>Páscoa Feliz</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent maximus mauris at iaculis faucibus. Lorem ipsum dolor sit amet, consectetur</p>
