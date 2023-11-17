@@ -18,6 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/index',[PageController::class,'index'])->name('index');
 Route::get('/message',[PageController::class,'message'])->name('message');
 Route::get('/sobre',[PageController::class,'sobre'])->name('sobre');
 Route::get('/eventos',[PageController::class,'eventos'])->name('eventos');
