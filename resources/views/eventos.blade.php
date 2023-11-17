@@ -1,9 +1,9 @@
 @extends ('layout.master')
 
-@section('title', 'Enviar Msg')
+@section('title', 'Eventos')
 
 @section('styles')
-<link rel="stylesheet" href="{{asset('css/estilos_message.css')}}">
+<link rel="stylesheet" href="{{asset('css/_eventos.css')}}">
     <!--
         opcional
         <link rel="stylesheet" href="style_message.css">
@@ -12,37 +12,67 @@
 @endsection
 
 @section('content')
-    <div class="containerAll">
-        <div class="ajustes">
-            <div class="form-divided">
-                <div class="part1">
-                    <div class="oped">
-                        <h1>OPED<span>LEIRIA</span></h1>
-                    </div>
-                </div>
-                <div class="part2">
-                    <div class="inputs">
-                        <img src="{{asset('img/user.png')}}" alt="nome">
-                        <input type="text" name="nome" placeholder="O seu nome">
-                    </div>
-                    <div class="mail">
-                        <img src="{{asset('img/mail.png')}}" alt="nome">
-                        <input type="text" name="nome" placeholder="O seu email">
-                    </div>
-                    <div class="bubble">
-                        <img src="{{asset('img/bubble.png')}}" alt="nome">
-                        <textarea type="text" name="nome" placeholder="O seu email"></textarea>
-                    </div>
-                    <div class="botao">
-                        <a href="#"><button>Enviar Mensagem</button></a>
-                    </div>
+<section class="header">
+    <h1>Eventos</h1>
+</section>
 
-
-                </div>
-            </div>
+<section class="cards">
+    <div class="card">
+        <img src="img/caminhada.jpg" alt="Evento 1">
+        <div class="card-content">
+            <h3>Caminhada pela Saúde Mental</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent maximus mauris at iaculis faucibus. Lorem ipsum dolor sit amet, consectetur</p>
+            <button class="btn">Inscrever-me <i class="fa-solid fa-arrow-right fa-xs" style="color: #ffffff;"></i></i></button>
         </div>
-
     </div>
+
+    <div class="card">
+        <img src="img/sao_martinho.jpg" alt="Evento 2">
+        <div class="card-content">
+            <h3>São Martinho</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent maximus mauris at iaculis faucibus. Lorem ipsum dolor sit amet, consectetur</p>
+            <button class="btn">Inscrever-me <i class="fa-solid fa-arrow-right fa-xs" style="color: #ffffff;"></i></i></button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="img/parque.jpeg" alt="Evento 3">
+        <div class="card-content">
+            <h3>Evento Solidário no Parque</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent maximus mauris at iaculis faucibus. Lorem ipsum dolor sit amet, consectetur</p>
+            <button class="btn">Inscrever-me <i class="fa-solid fa-arrow-right fa-xs" style="color: #ffffff;"></i></i></button>
+        </div>
+    </div>
+</section>
+
+<section class="cards">
+    <div class="card">
+        <img src="img/Natal.jpg" alt="Evento 1">
+        <div class="card-content">
+            <h3>Gala de Natal OPEDLeiria</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent maximus mauris at iaculis faucibus. Lorem ipsum dolor sit amet, consectetur</p>
+            <button class="btn">Inscrever-me <i class="fa-solid fa-arrow-right fa-xs" style="color: #ffffff;"></i></i></button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="img/carnaval.jpg" alt="Evento 2">
+        <div class="card-content">
+            <h3>Carnaval Especial</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent maximus mauris at iaculis faucibus. Lorem ipsum dolor sit amet, consectetur</p>
+            <button class="btn">Inscrever-me <i class="fa-solid fa-arrow-right fa-xs" style="color: #ffffff;"></i></i></button>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="img/Pascoa.jpeg" alt="Evento 3">
+        <div class="card-content">
+            <h3>Páscoa Feliz</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent maximus mauris at iaculis faucibus. Lorem ipsum dolor sit amet, consectetur</p>
+            <button class="btn">Inscrever-me <i class="fa-solid fa-arrow-right fa-xs" style="color: #ffffff;"></i></i></button>
+        </div>
+    </div>
+</section>
 @endsection
 
 @section('scripts')
