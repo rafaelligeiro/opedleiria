@@ -81,6 +81,15 @@ body{
     height: 30px;
 }
 
+.inputs input:focus{
+    background-color: #d9d9d9;
+    border-radius: 10px;
+    width: 300px;
+    border: 0;
+    padding-left: 10px;
+    height: 30px;
+}
+
 .mail input{
     background-color: #d9d9d9;
     border-radius: 10px;
@@ -131,15 +140,16 @@ body{
 .botao button{
     background-color: #0C6A6A;
     border: 0;
+    border-radius: 10px;
     color: white;
     font-weight: bold;
     font-size: 16px;
-    width: 250px;
+    width: 300px;
     height: 40px;
-    -webkit-box-shadow: 11px 10px 16px -11px #000000;
-    box-shadow: 11px 10px 16px -11px #000000;
+    margin-left: 30px;
 }
 
 .botao button:hover{
     cursor: pointer;
 }
+
