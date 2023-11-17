@@ -1,6 +1,6 @@
 @extends ('layout.master')
 
-@section('title', 'Sobre o OPEDLeiria')
+@section('title', '..')
 
 @section('styles')
   <!--
