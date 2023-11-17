@@ -1,0 +1,103 @@
+body{
+    background-image: url(../img/sky.png);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.containerAll{
+    width: fit-content;
+}
+
+.ajustes{
+    margin: 0 auto;
+    position: absolute;
+    top: 25%;
+    left: 20%;
+}
+
+.form-divided{
+    height: 500px;
+    width: 850px;
+    position: relative;
+    display: flex;
+}
+
+.part1{
+    background-image: url(../img/wheelchair-girl.png);
+    background-size: cover;
+    height: 500px;
+    width: 400px;
+}
+
+.oped{
+    width: fit-content;
+    margin: 0 auto;
+}
+.oped h1{
+    margin-left: 8%;
+    color: #29B5B6;
+    font-weight: bold;
+}
+
+.oped span{
+    font-weight: normal;
+    color: aliceblue;
+}
+
+.part2{
+    background-color: #FAF8F8;
+    height: 500px;
+    width: 450px;
+}
+
+.inputs{
+    width: fit-content;
+    margin: 50px auto;
+    display: flex;
+}
+
+.inputs input{
+    background-color: unset;
+    width: 300px;
+    border-top: 0;
+    border-inline: 0;
+}
+
+.inputs img{
+    width: 32px;
+    height: auto;
+    align-self: baseline;
+    padding-right: 15px;
+}
+
+.inputs textarea{
+    background-color: unset;
+    width: 300px;
+    border-radius: 5px;
+    border: 2px solid rgb(102, 101, 101);
+    resize: none;
+    height: 150px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+
+
+.botao{
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.botao button{
+    background-color: #0C6A6A;
+    border-radius: 25px;
+    border: 0;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    width: 250px;
+    height: 40px;
+}
+
+.botao button:hover{
+    cursor: pointer;
+}
