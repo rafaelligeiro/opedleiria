@@ -23,7 +23,7 @@
                 <div class="part2">
                     <div class="inputs">
                         <img src="{{asset('img/user.png')}}" alt="nome">
-                        <input type="text" name="nome" placeholder="O seu nome">
+                        <input class="nome" type="text" name="nome" placeholder="O seu nome">
                     </div>
                     <div class="mail">
                         <img src="{{asset('img/mail.png')}}" alt="nome">
