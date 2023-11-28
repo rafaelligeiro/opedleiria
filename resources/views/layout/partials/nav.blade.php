@@ -21,7 +21,7 @@
                     <a class="nav-link" aria-disabled="true">Loja</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-disabled="true">Contactoos</a>
+                    <a class="nav-link" aria-disabled="true">Contactos</a>
                 </li>
             </ul>
             <form id="pesquisa" class="d-flex" role="search">
