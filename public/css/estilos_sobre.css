@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@200;300;400;500;600;700&family=Inter:wght@300;400;500;700;800;900&family=Montserrat:wght@400;500;700;900&display=swap');
+
+body{
+    font-family: 'Inter', sans-serif;
+}
+
+.banner img{
+    height: 100%;
+    width: 100%;
+    max-height: 750px;
+    object-fit: cover;
+    position: relative;
+    z-index: -10;
+}
+
+.banner .title{
+    position: absolute;
+    left: 20%;
+    bottom: 70%;
+    font-weight: 900;
+    font-size: 95px;
+    color: white;
+
+}
+.location{
+    min-height: 400px;
+}
+.location h2{
+    font-weight: bold;
+}
+.location img{
+    max-width: 500px;
+    border-radius: 15px;
+}
+
+.objetivos{
+    background-color: #fafafa;
+    min-height: 400px;
+}
+.objetivos h2{
+    font-weight: bold;
+}
+.objetivos img{
+    max-width: 500px;
+    border-radius: 15px;
+}
+.equipa h1{
+font-size: 60px;
+font-weight: 900;
+text-align: center;
+}
+.equipa h3{
+    font-size: 20px;
+    text-align: center;
+    padding-top:1rem;
+    }
+a {
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+  }
+
+.box-position {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .box {
+    width: 25%;
+    height: auto;
+    margin: 10px;
+    padding: 25px;
+    background-color: #D9D9D9;
+    text-align: center;
+    border-radius: 25px;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .box:hover {
+    box-shadow: 0px 0px 15px 0px #666;
+  }
+  .box:hover img {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px 0px #c0c0c0;
+  }
+  .box a {
+    text-decoration: none;
+    color: #000;
+  }
+
+  .box img {
+    width: 50%;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 0px #7c7c7c;
+    transition: all 0.3s;
+  }

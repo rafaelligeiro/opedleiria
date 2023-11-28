@@ -9,13 +9,7 @@ body{
 
 .containerAll{
     width: fit-content;
-}
-
-.ajustes{
-    margin: 0 auto;
-    position: absolute;
-    top: 25%;
-    left: 20%;
+    margin: 100px auto;
 }
 
 .form-divided{
@@ -25,6 +19,7 @@ body{
     height: 500px;
     width: 850px;
     display: flex;
+    position: relative;
 }
 
 .part1{
@@ -38,13 +33,13 @@ body{
     width: fit-content;
     margin: 20px auto 0 auto;
 }
-.oped h1{
+.oped .opening{
     color: #29B5B6;
     font-weight: bold;
     font-size: 50px;
 }
 
-.oped span{
+.oped .span{
     font-weight: normal;
     color: rgb(26, 26, 26);
 }
@@ -76,7 +71,7 @@ body{
     align-items: start;
 }
 
-.inputs input{
+.inputs .nome{
     background-color: #d9d9d9;
     border-radius: 10px;
     width: 300px;
@@ -85,7 +80,7 @@ body{
     height: 30px;
 }
 
-.mail input{
+.mail .email{
     background-color: #d9d9d9;
     border-radius: 10px;
     width: 300px;
@@ -96,25 +91,25 @@ body{
 
 
 
-.inputs img{
+.inputs .imagem1{
     width: 32px;
     height: auto;
     padding-right: 15px;
 }
 
-.mail img{
+.mail .imagem2{
     width: 32px;
     height: auto;
     padding-right: 15px;
 }
 
-.bubble img{
+.bubble .imagem3{
     width: 32px;
     height: auto;
     padding-right: 15px;
 }
 
-.bubble textarea{
+.bubble .mensagem{
     background-color: #d9d9d9;
     border-radius: 10px;
     width: 300px;
@@ -131,7 +126,7 @@ body{
     margin: 0 auto;
 }
 
-.botao button{
+.botao .mainbutton{
     background-color: #0C6A6A;
     border: 0;
     border-radius: 10px;
@@ -143,7 +138,7 @@ body{
     margin-left: 30px;
 }
 
-.botao button:hover{
+.botao .mainbutton:hover{
     cursor: pointer;
 }
 

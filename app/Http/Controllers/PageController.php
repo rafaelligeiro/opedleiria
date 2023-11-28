@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
+    public function index(){
+        return view('index');
+    }
     public function message(){
         return view('message');
     }
@@ -14,5 +17,11 @@ class PageController extends Controller
     }
     public function eventos(){
         return view('eventos');
+    }
+    public function login(){
+        return view('login');
+    }
+    public function register(){
+        return view('register');
     }
 }
