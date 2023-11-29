@@ -11,21 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('utilizador', function (Blueprint $table) {
-            $table->id();
-            $table->string('nome');
-            $table->string('apelido');
+        Schema::table('users', function (Blueprint $table) {
             $table->dateTime('data_nasc');
             $table->enum('genero',['Masculino','Feminino'])->default('Masculino');
             $table->text('morada');
             $table->string('cod_postal',8);
-            $table->integer('nif',9);
-            $table->integer('telefone', 9);
-            $table->string('email', 120)->unique();
-            $table->string('password');
-            $table->timestamp('email_verified_at')->nullable();
-
-            $table->timestamps();
+            $table->bigInteger('nif');
+            $table->bigInteger('telefone');
+            $table->softDeletes();
         });
     }
 
@@ -34,6 +27,14 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('utilizador');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('data_nasc');
+            $table->dropColumn('genero');
+            $table->dropColumn('morada');
+            $table->dropColumn('cod_postal');
+            $table->dropColumn('nif');
+            $table->dropColumn('telefone');
+            $table->dropSoftDeletes();
+        });
     }
 };

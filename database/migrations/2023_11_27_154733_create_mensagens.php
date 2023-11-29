@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('email', 120)->unique();
 
             $table->unsignedBigInteger('id_utilizador');
-            $table->foreign('id_utilizador')->references('id')->on('utilizador');
+            $table->foreign('id_utilizador')->references('id')->on('users');
             $table->timestamps();
         });
     }

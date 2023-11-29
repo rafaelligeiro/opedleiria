@@ -19,7 +19,7 @@ return new class extends Migration
             $table->dateTime('data');
 
             $table->unsignedBigInteger('id_func');
-            $table->foreign('id_func')->references('id')->on('funcionario');
+            $table->foreign('id_func')->references('id')->on('funcionarios');
 
             $table->timestamps();
         });

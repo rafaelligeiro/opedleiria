@@ -11,14 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('inscricao', function (Blueprint $table) {
+        Schema::create('inscricoes', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
+            $table->bigInteger('telefone');
             $table->integer('quantidade');
-            $table->integer('telefone', 9);
 
             $table->unsignedBigInteger('id_utilizador');
-            $table->foreign('id_utilizador')->references('id')->on('utilizador');
+            $table->foreign('id_utilizador')->references('id')->on('users');
+            $table->unsignedBigInteger('id_evento');
+            $table->foreign('id_evento')->references('id')->on('eventos');
 
             $table->timestamps();
         });
@@ -29,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('inscricao');
+        Schema::dropIfExists('inscricoes');
     }
 };

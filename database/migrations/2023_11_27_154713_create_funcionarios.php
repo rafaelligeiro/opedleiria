@@ -16,7 +16,7 @@ return new class extends Migration
             $table->enum('cargo', ['Administrador', 'Funcionário']);
 
             $table->unsignedBigInteger('id_utilizador');
-            $table->foreign('id_utilizador')->references('id')->on('utilizador');
+            $table->foreign('id_utilizador')->references('id')->on('users');
 
             $table->timestamps();
         });
