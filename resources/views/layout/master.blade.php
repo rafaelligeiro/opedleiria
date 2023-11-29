@@ -8,7 +8,7 @@
     @yield('styles')
     <title>@yield('title')</title>
 </head>
-<body>
+<body class="@yield('classes_body')">
     @include('layout.partials.header')
 
     @yield('content')

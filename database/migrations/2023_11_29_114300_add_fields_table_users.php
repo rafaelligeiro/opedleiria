@@ -12,12 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dateTime('data_nasc');
-            $table->enum('genero',['Masculino','Feminino'])->default('Masculino');
-            $table->text('morada');
-            $table->string('cod_postal',8);
-            $table->bigInteger('nif');
-            $table->bigInteger('telefone');
+            $table->dateTime('data_nasc')->nullable();
+            $table->enum('genero',['M','F'])->default('M');
+            $table->text('morada')->nullable();
+            $table->string('cod_postal',8)->nullable();
+            $table->bigInteger('nif')->nullable();
+            $table->bigInteger('telefone')->nullable();
+            $table->string('photo', 100)->nullable();
+            $table->enum('role', ['A','F','M'])->default('M');
             $table->softDeletes();
         });
     }
