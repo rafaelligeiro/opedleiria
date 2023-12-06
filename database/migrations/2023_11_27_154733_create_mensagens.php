@@ -15,10 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('nome');
             $table->text('mensagem');
-            $table->string('email', 120)->unique();
+            $table->string('email', 120);
 
-            $table->unsignedBigInteger('id_utilizador');
+         /*   $table->unsignedBigInteger('id_utilizador');
             $table->foreign('id_utilizador')->references('id')->on('users');
+            */
             $table->timestamps();
         });
     }
