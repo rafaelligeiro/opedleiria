@@ -58,7 +58,7 @@
                 </a>
             </div>
             <div class="box">
-                <img src="" alt="" />
+                <img src="{{asset('img/francisco.png')}}" alt="" />
                 <h3>Francisco Assis</h3>
                 </a>
             </div>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\MensagemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,5 +39,5 @@ Route::group(['middleware' => ['auth', 'verified'], 'as' => 'admin.',
 
 });
 
-Auth::routes(['verify' => true]);
+//Auth::routes(['verify' => true]);
 
