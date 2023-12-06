@@ -38,6 +38,6 @@ Route::group(['middleware' => ['auth', 'verified'], 'as' => 'admin.',
     Route::resource('users', UserController::class);
 
 });
-
-//Auth::routes(['verify' => true]);
+Route::post('mensagens',[MensagemController::class,'store'])->name('mensagens.store');
+Auth::routes(['verify' => true]);
 
