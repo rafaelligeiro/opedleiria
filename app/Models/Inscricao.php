@@ -14,7 +14,7 @@ class Inscricao extends Model
     protected $fillable = [
         'nome',
         'telefone',
-        'quantidade',
+        'quantidade'
     ];
 
     public function user()
