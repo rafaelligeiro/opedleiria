@@ -1,6 +1,8 @@
-@extends('layouts.app')
-
+@extends ('layout.master') @section('title', 'Login OPEDLeiria')
+@section('styles') @vite('resources/css/app.css') @endsection
+@section('classes_body') bg-[#eaeaea] font-poppins @endsection
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

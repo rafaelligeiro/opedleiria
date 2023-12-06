@@ -7,7 +7,8 @@
     >
     <div class="md:w-1/2 w-full m-auto">
         <h1 class="text-4xl font-bold md:my-24 my-12 text-center">Entrar na Conta</h1>
-        <form class="my-8">
+            <form class="my-8" method="POST" action="{{ route('login') }}">
+            @csrf
             <label for="" class="block my-2 text-sm font-medium text-gray-900"
                 >Endereço Email</label
             >
@@ -38,6 +39,11 @@
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
                     placeholder="valentim@opedleiria.pt"
                 />
+                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
             </div>
             <label for="" class="block my-2 text-sm font-medium text-gray-900"
                 >Palavra-Passe</label
