@@ -24,7 +24,7 @@
                     </div>
                 </div>
 
-                <form action="{{route('mensagens.store')}}" method='POST'>
+                <form class="formClass" action="{{route('mensagens.store')}}" method='POST'>
                     @csrf
                 <div class="part2">
                     <div class="inputs">
