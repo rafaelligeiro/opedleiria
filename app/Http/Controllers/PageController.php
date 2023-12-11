@@ -18,12 +18,7 @@ class PageController extends Controller
     public function eventos(){
         return view('eventos');
     }
-    public function login(){
-        return view('login');
-    }
-    public function register(){
-        return view('register');
-    }
+
     public function admindashboard()
     {
         /*$count_projects = Project::count();
