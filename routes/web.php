@@ -6,6 +6,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\MensagemController;
+use App\Http\Controllers\InscricaoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,7 @@ Route::get('/eventos',[PageController::class,'eventos'])->name('eventos');
 Route::group(['middleware' => ['auth', 'verified'], 'as' => 'admin.',
     'prefix' => 'admin'], function () {
     Route::get('/', [PageController::class, 'admindashboard'])->name('dashboard');
+    Route::get('/eventos', [EventoController::class, 'index']);
 
     Route::get('/users/{user}/send_reactivate_mail',
         [UserController::class, 'send_reactivate_email'])
@@ -42,6 +44,5 @@ Route::group(['middleware' => ['auth', 'verified'], 'as' => 'admin.',
 Route::get('evento/{evento}/inscricoes',[InscricaoController::class,'create'])->name('inscricoes.create')->middleware(['auth', 'verified']);
 Route::post('evento/{evento}/inscricoes',[InscricaoController::class,'store'])->name('inscricoes.store')->middleware(['auth', 'verified']);
 Route::post('mensagens',[MensagemController::class,'store'])->name('mensagens.store');
-Route::get('/eventos', [EventoController::class, 'index']);
-Auth::routes(['verify' => true]);
 
+Auth::routes(['verify' => true]);
