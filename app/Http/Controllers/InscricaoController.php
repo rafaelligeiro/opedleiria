@@ -10,7 +10,7 @@ class InscricaoController extends Controller
 {
     public function  create(Evento $evento)
     {
-        return view('inscricao',compact('evento'))
+        return view('inscricao',compact('evento'));
     }
     public function store(InscricaoRequest $request,Evento $evento)
     {

@@ -23,7 +23,7 @@
                 <div class="card-content">
                     <h3>{{ $evento->titulo }}</h3>
                     <p>{{ $evento->descricao }}</p>
-                    <button class="btn">Inscrever-me <i class="fa-solid fa-arrow-right fa-xs" style="color: #ffffff;"></i></i></button>
+                    <a href="{{route('inscricoes.create',$evento)}}" class="btn">Inscrever-me <i class="fa-solid fa-arrow-right fa-xs" style="color: #ffffff;"></i></i></a>
                 </div>
             </div>
         @endforeach
