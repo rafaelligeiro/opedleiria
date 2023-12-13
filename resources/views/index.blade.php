@@ -3,6 +3,7 @@
 @section('title', 'Bem-Vindo ao OPEDLeiria')
 
 @section('styles')
+  @vite('resources/css/app.css')
   <link rel="stylesheet" href="{{asset('css/index.css')}}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -82,6 +83,15 @@
                     <button class="button-sec">Começar uma inscrição</button>
                 </div>
                 <img src="{{asset('img/mundo-index.png')}}" alt="">
+            </div>
+        </div>
+
+        <div class="linha4">
+            <div class="evento">
+                <p class="tituloEvento">Teste</p>
+                <p class="dataEvento">2023</p>
+                <p class="descricaoEvento">Descricao</p>
+                <p class="participantesEvento">50</p>
             </div>
         </div>
     </div>

@@ -89,7 +89,7 @@ h2 {
     margin: auto;
     margin-top: -100px;
     max-width: 1200px;
-    height: 1000px;
+    height: fit-content;
 }
 
 .linha1 {
@@ -237,4 +237,9 @@ h2 {
 
 .linha3 .box1 .content p {
     width: 500px;
+}
+
+.linha4 {
+    height: fit-content;
+    margin-bottom: 50px;
 }
