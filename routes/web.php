@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\EventoController;
 use App\Http\Controllers\MensagemController;
 
 /*
@@ -39,5 +40,6 @@ Route::group(['middleware' => ['auth', 'verified'], 'as' => 'admin.',
 
 });
 Route::post('mensagens',[MensagemController::class,'store'])->name('mensagens.store');
+Route::get('/eventos', [EventoController::class, 'index']);
 Auth::routes(['verify' => true]);
 

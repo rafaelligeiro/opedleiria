@@ -17,6 +17,7 @@ return new class extends Migration
             $table->text('descricao');
             $table->dateTime('data');
             $table->integer('num_participantes');
+            $table->string('imagem')->nullable();
 
             $table->timestamps();
         });
