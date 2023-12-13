@@ -9,8 +9,6 @@ class Evento extends Model
 {
     use HasFactory;
 
-    protected $table="eventos";
-
     protected $fillable = [
         'titulo',
         'descricao',
@@ -18,4 +16,8 @@ class Evento extends Model
         'num_participantes'
     ];
 
+    public function inscricoes()
+    {
+        return $this->hasMany(Inscricao::class, 'id_evento');
+    }
 }
