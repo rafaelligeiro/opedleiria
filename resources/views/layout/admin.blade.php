@@ -69,7 +69,7 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePosts"
                     aria-expanded="true" aria-controls="collapsePosts">
                     <i class="fas fa-fw fa-folder"></i>
-                    <span>Projetos</span>
+                    <span>Eventos</span>
                 </a>
                 <div id="collapsePosts" class="collapse" aria-labelledby="headingPosts" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">

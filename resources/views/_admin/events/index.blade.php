@@ -7,12 +7,12 @@
 
   <div class="card shadow mb-4">
     <div class="card-header py-3">
-      <a class="btn btn-primary" href="{{route('admin.events.create')}}">
+      <a class="btn btn-primary" href="{{route('admin.eventos.create')}}">
         <i class="fas fa-plus"></i> Novo Evento
       </a>
     </div>
     <div class="card-body">
-      @if(count($events))
+      @if(count($eventos))
       <div class="table-responsive">
         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
           <thead>
@@ -26,18 +26,18 @@
             </tr>
           </thead>
           <tbody>
-            @foreach($events as $event)
+            @foreach($eventos as $evento)
             <tr>
               <td>
-                <img src="{{asset('public/img/'. $event->imagem)}}" class="img-post" alt="Event image">
+                <img src="{{asset('public/img/'. $evento->imagem)}}" class="img-post" alt="Event image">
               </td>
-              <td>{{$event->data}}</td>
-              <td>{{$event->titulo}}</td>
-              <td>{{$event->descricao}}</td>
+              <td>{{$evento->data}}</td>
+              <td>{{$evento->titulo}}</td>
+              <td>{{$evento->descricao}}</td>
               <td nowrap>
-                <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.events.show',$event)}}"><i class="fas fa-eye fa-xs"></i></a>
-                <a class="btn btn-xs btn-warning btn-p" href="{{route('admin.events.edit',$event)}}"><i class="fas fa-pen fa-xs"></i></a>
-                <form method="POST" action="{{route('admin.events.destroy',$event)}}" role="form" class="inline"
+                <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.eventos.show',$evento)}}"><i class="fas fa-eye fa-xs"></i></a>
+                <a class="btn btn-xs btn-warning btn-p" href="{{route('admin.eventos.edit',$evento)}}"><i class="fas fa-pen fa-xs"></i></a>
+                <form method="POST" action="{{route('admin.eventos.destroy',$evento)}}" role="form" class="inline"
                 onsubmit="return confirm('Confirma que pretende eliminar este registo?');">
                   @csrf
                   @method('DELETE')

@@ -10,11 +10,11 @@
             <div class="card-body">
 
                 <div>
-                    <img alt="Post image" src="{{ asset('public/img/' . $event->imagem) }}">
+                    <img alt="Post image" src="{{ asset('public/img/' . $evento->imagem) }}">
                 </div>
 
-                <div><strong>Titulo:</strong> {{ $project->titulo }} </div>
-                <div><strong>Descrição:</strong> {{ $project->descricao }} </div>
+                <div><strong>Titulo:</strong> {{ $evento->titulo }} </div>
+                <div><strong>Descrição:</strong> {{ $evento->descricao }} </div>
             </div>
         </div>
     </div>

@@ -29,7 +29,7 @@ Route::get('/eventos',[PageController::class,'eventos'])->name('eventos');
 Route::group(['middleware' => ['auth', 'verified'], 'as' => 'admin.',
     'prefix' => 'admin'], function () {
     Route::get('/', [PageController::class, 'admindashboard'])->name('dashboard');
-    Route::get('/eventos', [EventoController::class, 'index']); //nao apagar Marcelino
+    Route::get('/events', [EventoController::class, 'index']); //nao apagar Marcelino
 
     Route::get('/users/{user}/send_reactivate_mail',
         [UserController::class, 'send_reactivate_email'])
