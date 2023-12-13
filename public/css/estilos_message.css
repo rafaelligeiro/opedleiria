@@ -4,7 +4,7 @@
 
 body{
     background-image: url(../img/sky.png);
-    font-family: 'Montserrat', sans-serif;
+    font-family: montserrat;
 }
 
 .containerAll{
@@ -35,13 +35,15 @@ body{
 }
 .oped .opening{
     color: #29B5B6;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 50px;
+    letter-spacing: -2px;
 }
 
 .oped .span{
-    font-weight: normal;
+    font-weight: 600;
     color: rgb(26, 26, 26);
+    letter-spacing: -2px;
 }
 
 .part2{
@@ -146,7 +148,7 @@ body{
     font-size: 16px;
     width: 300px;
     height: 40px;
-    
+
 }
 
 .botao .mainbutton:hover{
