@@ -23,7 +23,7 @@ section.header{
     color: white;
 }
 
-h1 {
+h1.titulo {
     margin: 0;
     font-size: 60px;
     color: #274C5B;

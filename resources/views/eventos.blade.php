@@ -4,6 +4,7 @@
 
 @section('styles')
 <link rel="stylesheet" href="{{asset('css/_eventos.css')}}">
+@vite('resources/css/app.css')
     <!--
         opcional
         <link rel="stylesheet" href="style_message.css">
@@ -13,7 +14,7 @@
 
 @section('content')
     <section class="header">
-        <h1>Eventos</h1>
+        <h1 class="titulo">Eventos</h1>
     </section>
 
     <section class="cards">
