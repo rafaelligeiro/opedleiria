@@ -20,7 +20,18 @@
 				</div>
 
 			</form>
-
+            @if (count($evento->inscricoes))
+            <div >
+                <h3>Inscrições</h3>
+                <ul>
+                    @foreach($evento->inscricoes as $inscricao)
+                    <li>
+                        {{$inscricao->nome}}
+                    </li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
 		</div>
 	</div>
 </div>

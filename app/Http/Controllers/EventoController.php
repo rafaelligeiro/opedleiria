@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Evento;
+use Illuminate\Http\Request;
+use App\Http\Requests\EventoRequest;
 use Illuminate\Support\Facades\Storage;
 
 class EventoController extends Controller
@@ -11,31 +12,26 @@ class EventoController extends Controller
     public function index()
     {
         $eventos = Evento::all();
-        return view('eventos', compact('eventos'));
+        return view('_admin.eventos.index', compact('eventos'));
     }
 
-    public function show($id)
+    public function show(Evento $evento)
     {
-        $evento = Evento::findOrFail($id);
-        return view('eventos.show', compact('evento'));
+
+        return view('_admin.eventos.show', compact('evento'));
     }
 
     public function create()
     {
-        return view('admin.eventos.create');
+        $evento =new Evento();
+        return view('_admin.eventos.create', compact('evento'));
     }
 
-    public function store(Request $request)
+    public function store(EventoRequest $request)
     {
-        $request->validate([
-            'titulo' => 'required',
-            'descricao' => 'required',
-            'data' => 'required|date',
-            'num_participantes' => 'required|integer',
-            'imagem' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-        ]);
 
-        $dadosEvento = $request->all();
+
+        $dadosEvento = $request->validated();
 
         if ($request->hasFile('imagem')) {
             $imagemPath = $request->file('imagem')->store('imagens/eventos');
@@ -44,43 +40,35 @@ class EventoController extends Controller
 
         Evento::create($request->all());
 
-        return redirect()->route('eventos.index')->with('success', 'Evento criado com sucesso!');
+        return redirect()->route('admin.eventos.index')->with('success', 'Evento criado com sucesso!');
     }
 
-    public function edit($id)
+    public function edit(Evento $evento)
     {
-        $evento = Evento::findOrFail($id);
-        return view('admin.eventos.edit', compact('evento'));
+
+        return view('_admin.eventos.edit', compact('evento'));
     }
 
-    public function update(Request $request, $id)
+    public function update(EventoRequest $request, Evento $evento)
     {
-        $request->validate([
-            'titulo' => 'required',
-            'descricao' => 'required',
-            'data' => 'required|date',
-            'num_participantes' => 'required|integer',
-            'imagem' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
-        ]);
-
-        $dadosEvento = $request->all();
+        $dadosEvento = $request->validated();
 
         if ($request->hasFile('imagem')) {
             $imagemPath = $request->file('imagem')->store('imagens/eventos');
             $dadosEvento['imagem'] = $imagemPath;
         }
 
-        $evento = Evento::findOrFail($id);
+
         $evento->update($dadosEvento);
 
-        return redirect()->route('eventos.index')->with('success', 'Evento atualizado com sucesso!');
+        return redirect()->route('admin.eventos.index')->with('success', 'Evento atualizado com sucesso!');
     }
 
-    public function destroy($id)
+    public function destroy(Evento $evento)
     {
-        $evento = Evento::findOrFail($id);
+
         $evento->delete();
 
-        return redirect()->route('eventos.index')->with('success', 'Evento excluído com sucesso!');
+        return redirect()->route('admin.eventos.index')->with('success', 'Evento excluído com sucesso!');
     }
 }
