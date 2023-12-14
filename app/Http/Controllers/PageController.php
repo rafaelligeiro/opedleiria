@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Evento;
 use Illuminate\Http\Request;
+use App\Http\Requests\PerfilRequest;
+use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
 {
@@ -20,6 +22,31 @@ class PageController extends Controller
         $eventos = Evento::all();
         return view('eventos', compact('eventos'));
     }
+    public function perfil(){
+        $user = Auth::user();
+
+        return view('perfil', compact('user'));
+    }
+
+    public function updatePerfil(PerfilRequest $request){
+        $user = Auth::user();
+
+        $fields = $request->validated();
+        $user->fill($fields);
+        if ($request->hasFile('photo')) {
+            if (!empty($user->photo)) {
+                Storage::disk('public')->delete('users_photos/' .
+                    $user->photo);
+            }
+            $photo_path =
+            $request->file('photo')->store('public/users_photos');
+            $user->photo = basename($photo_path);
+        }
+
+        $user->save();
+        return redirect()->route('updatePerfil');
+    }
+
 
     public function admindashboard()
     {
