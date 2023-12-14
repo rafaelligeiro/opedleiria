@@ -85,7 +85,7 @@
                 <img src="{{asset('img/mundo-index.png')}}" alt="">
             </div>
         </div>
-        @foreach($eventos->take(3) as $evento)
+        @foreach($eventos as $evento)
         <div class="linha4">
             <div class="evento">
                 <p class="tituloEvento">{{ $evento->titulo }}</p>
