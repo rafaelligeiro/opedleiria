@@ -16,17 +16,18 @@ integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9If
 
 @section('content')
 <div class="container">
-    <form  method="POST" action="{{route("inscricoes.store")}}">
+    <form  method="POST" action="{{route("inscricoes.store",$evento)}}">
+        @csrf
         <div class="form-group">
           <label for="name">Nome</label>
-          <input type="name" class="form-control" id="name"  placeholder="Escreva o seu nome">
+          <input type="text" class="form-control" id="name" name="nome" placeholder="Escreva o seu nome">
         </div>
         <div class="form-group">
           <label for="Telefone">Telefone</label>
-          <input type="Telefone" class="form-control" id="telefone" placeholder="Telefone">
+          <input type="text" class="form-control" id="telefone" name="telefone" placeholder="Telefone">
         </div>
         <div class="form-group">
-            <select class="custom-select">
+            <select class="custom-select" name="quantidade">
                 <option selected>Quantas pessoas vai inscrever</option>
                 <option value="1">Uma</option>
                 <option value="2">Duas</option>
