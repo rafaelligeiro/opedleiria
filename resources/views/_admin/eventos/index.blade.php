@@ -34,6 +34,7 @@
               <td>{{$evento->data}}</td>
               <td>{{$evento->titulo}}</td>
               <td>{{$evento->descricao}}</td>
+              <td>{{$evento->num_inscricoes}}</td>
               <td nowrap>
                 <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.eventos.show',$evento)}}"><i class="fas fa-eye fa-xs"></i></a>
                 <a class="btn btn-xs btn-warning btn-p" href="{{route('admin.eventos.edit',$evento)}}"><i class="fas fa-pen fa-xs"></i></a>

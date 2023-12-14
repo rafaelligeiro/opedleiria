@@ -89,9 +89,8 @@
         <div class="linha4">
             <div class="evento">
                 <p class="tituloEvento">{{ $evento->titulo }}</p>
-                <p class="dataEvento">2023</p>
+                <p class="dataEvento">{{ $evento->data }}</p>
                 <p class="descricaoEvento">{{ $evento->descricao }}</p>
-                <p class="participantesEvento">50</p>
             </div>
         </div>
         @endforeach
