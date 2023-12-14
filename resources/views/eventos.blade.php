@@ -20,7 +20,7 @@
     <section class="cards">
         @foreach($eventos as $evento)
             <div class="card">
-                <img src="{{ asset($evento->imagem) }}" alt="{{ $evento->titulo }}">
+                <img src="{{asset($evento->imagem) }}" alt="{{ $evento->titulo }}">
                 <div class="card-content">
                     <h3>{{ $evento->titulo }}</h3>
                     <p>{{ $evento->descricao }}</p>
