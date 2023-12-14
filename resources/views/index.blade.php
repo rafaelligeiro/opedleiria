@@ -94,6 +94,19 @@
                 <p class="participantesEvento">50</p>
             </div>
         </div>
+
+        <section class="cards">
+            @foreach($eventos->take(3) as $evento)
+                <div class="card">
+                    <img src="{{ asset($evento->imagem) }}" alt="{{ $evento->titulo }}">
+                    <div class="card-content">
+                        <h3>{{ $evento->titulo }}</h3>
+                        <p>{{ $evento->descricao }}</p>
+                        <a href="{{ route('inscricoes.create', $evento) }}" class="btn">Inscrever-me <i class="fa-solid fa-arrow-right fa-xs" style="color: #ffffff;"></i></i></a>
+                    </div>
+                </div>
+            @endforeach
+        </section>
     </div>
 @endsection
 
