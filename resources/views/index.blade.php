@@ -94,7 +94,6 @@
                 <p class="dataEvento">{{ $evento->data }}</p>
                 <p class="descricaoEvento">{{ $evento->descricao }}</p>
                 <p class="participantesEvento">{{ $evento->num_participantes }}</p>
-=======>>>>>>>
             </div>
             @endforeach
         </div>
