@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UserRequest extends FormRequest
+class PerfilRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,8 +26,12 @@ class UserRequest extends FormRequest
            'email' =>'required|email|unique:users,email,'.
                     ($this->user?$this->user->id:''),
            'photo' =>'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
-           'role' => 'required|in:A,M,F',
-          
+           'data_nasc' => 'nullable|date|date_format:Y-m-d',
+           'nif' => 'nullable|integer|digits:9',
+           'morada' => 'nullable',
+           'cod_postal' => 'nullable|string|max:9',
+           'telefone' => 'nullable|integer|digits:9',
+           'genero' => 'required|in:M,F',
         ];
     }
     public function messages(): array
