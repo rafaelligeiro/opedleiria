@@ -29,7 +29,8 @@
             @foreach($eventos as $evento)
             <tr>
               <td>
-                <img src="{{asset('public/img/'. $evento->imagem)}}" class="img-post" alt="Event image">
+                <img src="{{asset('storage/imagens_eventos/'.
+                $evento->imagem)}}"class="img-post" alt="Event image">
               </td>
               <td>{{$evento->data}}</td>
               <td>{{$evento->titulo}}</td>
