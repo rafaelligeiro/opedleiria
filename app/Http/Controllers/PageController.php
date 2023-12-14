@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class PageController extends Controller
 {
     public function index(){
-        return view('index');
+        $eventos = Evento::take(3);
+        return view('index', compact('eventos'));
     }
     public function message(){
         return view('message');
@@ -19,6 +20,7 @@ class PageController extends Controller
     public function eventos(){
         $eventos = Evento::all();
         return view('eventos', compact('eventos'));
+
     }
 
     public function admindashboard()
