@@ -22,7 +22,9 @@ class InscricaoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nome' => 'required|string|max:255',
+            'telefone' => 'required|string',
+            'quantidade' => 'required|string',
         ];
     }
 }

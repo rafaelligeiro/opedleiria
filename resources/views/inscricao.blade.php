@@ -18,6 +18,11 @@ integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9If
 <div class="container">
     <form  method="POST" action="{{route("inscricoes.store",$evento)}}">
         @csrf
+
+        <div class="evento text-center">
+            <h2>Inscrições para o evento "$evento"</h2> <!--colocar código para ir buscar o nome do evento -->
+        </div>
+
         <div class="form-group">
           <label for="name">Nome</label>
           <input type="text" class="form-control" id="name" name="nome" placeholder="Escreva o seu nome">
@@ -29,11 +34,11 @@ integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9If
         <div class="form-group">
             <select class="custom-select" name="quantidade">
                 <option selected>Quantas pessoas vai inscrever</option>
-                <option value="1">Uma</option>
-                <option value="2">Duas</option>
-                <option value="3">Três</option>
-                <option value="4">Quatro</option>
-                <option value="5">Cinco</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
               </select>
         </div>
         <button type="submit" class="btn btn-primary btn-block">Inscrever</button>
