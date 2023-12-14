@@ -102,3 +102,76 @@ section.cards {
     color: #0C6A6A;
 }
 
+
+.eventos {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    margin-bottom: 50px;
+    gap: 25px;
+    max-width: 1200px;
+}
+
+.eventos .evento {
+    background-color: white;
+    width: 33%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.eventos .evento img {
+    border-radius: 20px 20px 0px 0px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.eventos .evento .content {
+    padding: 30px;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.eventos .evento .content h2 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.eventos .evento .content .boxes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.eventos .evento .content .boxes .box {
+    align-items: center;
+    text-align: center;
+    background-color: #eaeaea;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    height: fill;
+}
+
+.eventos .evento .content .boxes .box .meio {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 40px;
+}
+
+.eventos .evento .content .button-sec {
+    font-size: 20px;
+    color: white;
+    background-color: #031C1D;
+    border-radius: 10px;
+    padding: 7px 15px 7px 15px;
+    border: 0;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+

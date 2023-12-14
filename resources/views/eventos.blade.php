@@ -29,6 +29,37 @@
             </div>
         @endforeach
     </section>
+
+
+    <div class="eventos">
+        @foreach($eventos->take(3) as $evento)
+        <div class="evento">
+            <img src="{{$evento->imagem}}" alt="">
+            <div class="content">
+                <div>
+                    <h2 class="tituloEvento">{{ $evento->titulo }}</h2>
+                    <p class="descricaoEvento">{{ $evento->descricao }}</p>
+                </div>
+                <div>
+                    <div class="boxes">
+                        <div class="box">
+                            <p class="cima">{{ \Carbon\Carbon::parse($evento->data)->format('H:i') }}</p>
+                            <p class="meio">{{ \Carbon\Carbon::parse($evento->data)->format('d') }}</p>
+                            <p class="baixo">{{ \Carbon\Carbon::parse($evento->data)->format('F') }}</p>
+
+                        </div>
+                        <div class="box">
+                            <p class="cima">Máximo</p>
+                            <p class="meio">{{ $evento->num_participantes }}</p>
+                            <p class="baixo">Participantes</p>
+                        </div>
+                    </div>
+                    <button class="button-sec">Saber Mais</button>
+                </div>
+            </div>
+        </div>
+        @endforeach
+    </div>
 @endsection
 
 @section('scripts')
