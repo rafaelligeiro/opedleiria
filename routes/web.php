@@ -30,17 +30,10 @@ Route::put('/perfil/update',[PageController::class,'updatePerfil'])->name('updat
 Route::group(['middleware' => ['auth', 'verified'], 'as' => 'admin.',
     'prefix' => 'admin'], function () {
     Route::get('/', [PageController::class, 'admindashboard'])->name('dashboard');
-    Route::get('/events', [EventoController::class, 'index']); //nao apagar Marcelino
-
-    Route::get('/users/{user}/send_reactivate_mail',
-        [UserController::class, 'send_reactivate_email'])
-        ->name('users.sendActivationEmail');
-    Route::delete('/users/{user}/destroy_photo',
-        [UserController::class, 'destroy_photo'])
-        ->name('users.destroyPhoto');
-
+    Route::get('/users/{user}/send_reactivate_mail',[UserController::class, 'send_reactivate_email'])->name('users.sendActivationEmail');
+    Route::delete('/users/{user}/destroy_photo',[UserController::class, 'destroy_photo'])->name('users.destroyPhoto');
     Route::resource('users', UserController::class);
-
+    Route::resource('/eventos', EventoController::class); //nao apagar Marcelino
 });
 Route::get('evento/{evento}/inscricoes',[InscricaoController::class,'create'])->name('inscricoes.create')->middleware(['auth', 'verified']);
 Route::post('evento/{evento}/inscricoes',[InscricaoController::class,'store'])->name('inscricoes.store')->middleware(['auth', 'verified']);

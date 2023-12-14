@@ -30,14 +30,15 @@
             <div class="box2">
                 <h2>Últimas Doações</h2>
                 <div class="ultimas-doacoes">
+                    @foreach($doacoes->take(2) as $doacao)
                     <div class="doacao">
                         <img src="{{asset('img/pessoa1.png')}}" alt="sofia-oliveira">
                         <div class="content">
-                            <h3>Sofia Oliveira</h3>
-                            <p>“Contribuir trouxe significado imediato à minha vida."</p>
+                            <h3>{{ $doacao->nome }}</h3>
+                            <p>{{ $doacao->descricao }}</p>
                         </div>
                     </div>
-
+                    @endforeach
                     <div class="doacao">
                         <img src="{{asset('img/pessoa2.png')}}" alt="pedro-martins">
                         <div class="content">
@@ -87,26 +88,15 @@
         </div>
 
         <div class="linha4">
-            <div class="evento">
-                <p class="tituloEvento">Teste</p>
-                <p class="dataEvento">2023</p>
-                <p class="descricaoEvento">Descricao</p>
-                <p class="participantesEvento">50</p>
-            </div>
-        </div>
-
-        <section class="cards">
             @foreach($eventos->take(3) as $evento)
-                <div class="card">
-                    <img src="{{ asset($evento->imagem) }}" alt="{{ $evento->titulo }}">
-                    <div class="card-content">
-                        <h3>{{ $evento->titulo }}</h3>
-                        <p>{{ $evento->descricao }}</p>
-                        <a href="{{ route('inscricoes.create', $evento) }}" class="btn">Inscrever-me <i class="fa-solid fa-arrow-right fa-xs" style="color: #ffffff;"></i></i></a>
-                    </div>
-                </div>
+            <div class="evento">
+                <p class="tituloEvento">{{ $evento->titulo }}</p>
+                <p class="dataEvento">{{ $evento->data }}</p>
+                <p class="descricaoEvento">{{ $evento->descricao }}</p>
+                <p class="participantesEvento">{{ $evento->num_participantes }}</p>
+            </div>
             @endforeach
-        </section>
+        </div>
     </div>
 @endsection
 

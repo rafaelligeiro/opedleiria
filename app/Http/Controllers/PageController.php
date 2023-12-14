@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Doacao;
 use App\Models\Evento;
 use Illuminate\Http\Request;
 use App\Http\Requests\PerfilRequest;
@@ -10,7 +11,9 @@ use Illuminate\Support\Facades\Auth;
 class PageController extends Controller
 {
     public function index(){
-        return view('index');
+        $eventos = Evento::all();
+        $doacoes = Doacao::all();
+        return view('index', compact('doacoes', 'eventos'));
     }
     public function message(){
         return view('message');
@@ -21,6 +24,7 @@ class PageController extends Controller
     public function eventos(){
         $eventos = Evento::all();
         return view('eventos', compact('eventos'));
+
     }
     public function perfil(){
         $user = Auth::user();

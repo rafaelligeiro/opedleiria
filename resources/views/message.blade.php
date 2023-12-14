@@ -13,11 +13,33 @@
 
 @section('content')
 @if (!empty(session('success')))
-<div class="alert alert-success alert-dismissible fade show" role="alert">
-    {{session('success')}}
+<div class="alert alert-success alert-dismissible fade show" style="margin: 0 auto !important; width:500px;" role="alert">
+    <p style="margin: 0 auto; width:fit-content;" >Mensagem enviada com sucesso!!</p>
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
   </div>
-            @endif
+@endif
+
+@error("nome")
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    Erro no nome!!
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+@enderror
+
+@error("email")
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    Erro no email!!
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+@enderror
+
+@error("mensagem")
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    Erro na mensagem!!
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+@enderror
+
     <div class="containerAll">
         <div class="ajustes">
             <div class="form-divided">
@@ -38,26 +60,24 @@
                                 <input class="nome" type="text" name="nome" placeholder="Rafael Ligeiro">
                             </div>
                         </div>
-                        @error("nome")
-                        <br>
-                        <div style="color:red">{{$message}}</div>
-                        @enderror
                     </div>
-                    <div class="mail">
-                        <img class="imagem2" src="{{asset('img/mail.png')}}" alt="nome">
-                        <input class="email" type="text" name="email" placeholder="O seu email">
-                        @error("email")
-                        <br>
-                        <div style="color:red">{{$message}}</div>
-                        @enderror
+                    <div class="inputs">
+                        <div class="input">
+                            <p>Introduza o seu email</p>
+                          <div class="mail">
+                            <img class="imagem2" src="{{asset('img/mail.png')}}" alt="nome">
+                            <input class="email" type="text" name="email" placeholder="O seu email">
+                          </div>
+                        </div>
                     </div>
-                    <div class="bubble">
-                        <img class="imagem3" src="{{asset('img/bubble.png')}}" alt="nome">
-                        <textarea class="mensagem" type="text" name="mensagem" placeholder="A sua mensagem"></textarea>
-                        @error("mensagem")
-                        <br>
-                        <div style="color:red">{{$message}}</div>
-                        @enderror
+                    <div class="inputs">
+                        <div class="input">
+                            <p>Introduza a sua mensagem</p>
+                           <div class="bubble">
+                                <img class="imagem3" src="{{asset('img/bubble.png')}}" alt="nome">
+                                <textarea class="mensagem" type="text" name="mensagem" placeholder="A sua mensagem"></textarea>
+                            </div>
+                        </div>
                     </div>
                     <div class="botao">
                         <a href="#"><button type="submit" class="mainbutton">Enviar Mensagem</button></a>
