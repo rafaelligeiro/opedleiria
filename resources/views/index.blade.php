@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="{{asset('img/favicon.png')}}">
 @endsection
 
 @section('content')
@@ -32,20 +33,13 @@
                 <div class="ultimas-doacoes">
                     @foreach($doacoes->take(2) as $doacao)
                     <div class="doacao">
-                        <img src="{{asset('img/pessoa1.png')}}" alt="sofia-oliveira">
+                        <img src="{{asset('img/pessoa1.png')}}" alt="foto-utilizador">
                         <div class="content">
                             <h3>{{ $doacao->nome }}</h3>
                             <p>{{ $doacao->descricao }}</p>
                         </div>
                     </div>
                     @endforeach
-                    <div class="doacao">
-                        <img src="{{asset('img/pessoa2.png')}}" alt="pedro-martins">
-                        <div class="content">
-                            <h3>Pedro Martins</h3>
-                            <p>“Ver o impacto direto das doações é incrivelmente gratificante.”</p>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -86,14 +80,32 @@
                 <img src="{{asset('img/mundo-index.png')}}" alt="">
             </div>
         </div>
-
         <div class="linha4">
             @foreach($eventos->take(3) as $evento)
             <div class="evento">
-                <p class="tituloEvento">{{ $evento->titulo }}</p>
-                <p class="dataEvento">{{ $evento->data }}</p>
-                <p class="descricaoEvento">{{ $evento->descricao }}</p>
-                <p class="participantesEvento">{{ $evento->num_participantes }}</p>
+                <img src="https://i.imgur.com/Rp1maML.jpg" alt="">
+                <div class="content">
+                    <div>
+                        <h2 class="tituloEvento">{{ $evento->titulo }}</h2>
+                        <p class="descricaoEvento">{{ $evento->descricao }}</p>
+                    </div>
+                    <div>
+                        <div class="boxes">
+                            <div class="box">
+                                <p class="cima">{{ \Carbon\Carbon::parse($evento->data)->format('H:i') }}</p>
+                                <p class="meio">{{ \Carbon\Carbon::parse($evento->data)->format('d') }}</p>
+                                <p class="baixo">{{ \Carbon\Carbon::parse($evento->data)->format('F') }}</p>
+
+                            </div>
+                            <div class="box">
+                                <p class="cima">Máximo</p>
+                                <p class="meio">{{ $evento->num_participantes }}</p>
+                                <p class="baixo">Participantes</p>
+                            </div>
+                        </div>
+                        <button class="button-sec">Saber Mais</button>
+                    </div>
+                </div>
             </div>
             @endforeach
         </div>

@@ -240,6 +240,72 @@ h2 {
 }
 
 .linha4 {
+    display: flex;
+    flex-direction: row;
     height: fit-content;
     margin-bottom: 50px;
+    gap: 25px;
 }
+
+.linha4 .evento {
+    background-color: white;
+    width: 33%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.linha4 .evento img {
+    border-radius: 20px 20px 0px 0px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.linha4 .evento .content {
+    padding: 30px;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.linha4 .evento .content h2 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.linha4 .evento .content .boxes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    gap: 10px;
+}
+
+.linha4 .evento .content .boxes .box {
+    align-items: center;
+    text-align: center;
+    background-color: #eaeaea;
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    height: fill;
+}
+
+.linha4 .evento .content .boxes .box .meio {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 40px;
+}
+
+.linha4 .evento .content .button-sec {
+    font-size: 20px;
+    color: white;
+    background-color: #031C1D;
+    border-radius: 10px;
+    padding: 7px 15px 7px 15px;
+    border: 0;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
