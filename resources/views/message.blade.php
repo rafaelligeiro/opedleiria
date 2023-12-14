@@ -31,8 +31,13 @@
                     @csrf
                 <div class="part2">
                     <div class="inputs">
-                        <img class="imagem1" src="{{asset('img/user.png')}}" alt="nome">
-                        <input class="nome" type="text" name="nome" placeholder="O seu nome">
+                        <div class="input">
+                            <p>Introduza o seu nome</p>
+                            <div class="iconInput">
+                                <img class="imagem1" src="{{asset('img/user.png')}}" alt="nome">
+                                <input class="nome" type="text" name="nome" placeholder="Rafael Ligeiro">
+                            </div>
+                        </div>
                         @error("nome")
                         <br>
                         <div style="color:red">{{$message}}</div>
