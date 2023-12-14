@@ -85,28 +85,16 @@
                 <img src="{{asset('img/mundo-index.png')}}" alt="">
             </div>
         </div>
-
+        @foreach($eventos->take(3) as $evento)
         <div class="linha4">
             <div class="evento">
-                <p class="tituloEvento">Teste</p>
+                <p class="tituloEvento">{{ $evento->titulo }}</p>
                 <p class="dataEvento">2023</p>
-                <p class="descricaoEvento">Descricao</p>
+                <p class="descricaoEvento">{{ $evento->descricao }}</p>
                 <p class="participantesEvento">50</p>
             </div>
         </div>
-
-        <section class="cards">
-            @foreach($eventos->take(3) as $evento)
-                <div class="card">
-                    <img src="{{ asset($evento->imagem) }}" alt="{{ $evento->titulo }}">
-                    <div class="card-content">
-                        <h3>{{ $evento->titulo }}</h3>
-                        <p>{{ $evento->descricao }}</p>
-                        <a href="{{ route('inscricoes.create', $evento) }}" class="btn">Inscrever-me <i class="fa-solid fa-arrow-right fa-xs" style="color: #ffffff;"></i></i></a>
-                    </div>
-                </div>
-            @endforeach
-        </section>
+        @endforeach
     </div>
 @endsection
 
