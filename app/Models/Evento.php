@@ -13,7 +13,8 @@ class Evento extends Model
         'titulo',
         'descricao',
         'data',
-        'num_participantes'
+        'num_participantes',
+        'imagem',
     ];
 
     public function inscricoes()

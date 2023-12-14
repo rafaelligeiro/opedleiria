@@ -29,16 +29,17 @@ class EventoController extends Controller
 
     public function store(EventoRequest $request)
     {
-
-
         $dadosEvento = $request->validated();
 
         if ($request->hasFile('imagem')) {
-            $imagemPath = $request->file('imagem')->store('imagens/eventos');
-            $dadosEvento['imagem'] = $imagemPath;
+            Storage::makeDirectory('public/imagens_eventos');
+            $img_path = $request->file('imagem')->store(
+                'public/imagens_eventos');
+            $dadosEvento['imagem'] = basename($img_path);
+
         }
 
-        Evento::create($request->all());
+        Evento::create($dadosEvento);
 
         return redirect()->route('admin.eventos.index')->with('success', 'Evento criado com sucesso!');
     }
@@ -54,10 +55,11 @@ class EventoController extends Controller
         $dadosEvento = $request->validated();
 
         if ($request->hasFile('imagem')) {
-            $imagemPath = $request->file('imagem')->store('imagens/eventos');
-            $dadosEvento['imagem'] = $imagemPath;
+            Storage::disk('public')->delete('imagens_eventos/' .$evento->imagem);
+            $img_path =
+            $request->file('imagem')->store('public/imagens_eventos');
+            $dadosEvento['imagem'] = basename($img_path);
         }
-
 
         $evento->update($dadosEvento);
 
@@ -66,7 +68,7 @@ class EventoController extends Controller
 
     public function destroy(Evento $evento)
     {
-
+        Storage::disk('public')->delete('imagens_eventos/' .$evento->imagem);
         $evento->delete();
 
         return redirect()->route('admin.eventos.index')->with('success', 'Evento excluído com sucesso!');
