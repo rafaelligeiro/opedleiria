@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Doacao;
 use App\Models\Evento;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
     public function index(){
-        $eventos = Evento::take(3);
-        return view('index', compact('eventos'));
+        $eventos = Evento::all();
+        $doacoes = Doacao::all();
+        return view('index', compact('doacoes', 'eventos'));
     }
     public function message(){
         return view('message');

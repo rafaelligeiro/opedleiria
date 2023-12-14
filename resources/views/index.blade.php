@@ -30,14 +30,15 @@
             <div class="box2">
                 <h2>Últimas Doações</h2>
                 <div class="ultimas-doacoes">
+                    @foreach($doacoes->take(2) as $doacao)
                     <div class="doacao">
                         <img src="{{asset('img/pessoa1.png')}}" alt="sofia-oliveira">
                         <div class="content">
-                            <h3>Sofia Oliveira</h3>
-                            <p>“Contribuir trouxe significado imediato à minha vida."</p>
+                            <h3>{{ $doacao->nome }}</h3>
+                            <p>{{ $doacao->descricao }}</p>
                         </div>
                     </div>
-
+                    @endforeach
                     <div class="doacao">
                         <img src="{{asset('img/pessoa2.png')}}" alt="pedro-martins">
                         <div class="content">
@@ -85,16 +86,17 @@
                 <img src="{{asset('img/mundo-index.png')}}" alt="">
             </div>
         </div>
-        @foreach($eventos as $evento)
+
         <div class="linha4">
+            @foreach($eventos->take(3) as $evento)
             <div class="evento">
                 <p class="tituloEvento">{{ $evento->titulo }}</p>
-                <p class="dataEvento">2023</p>
+                <p class="dataEvento">{{ $evento->data }}</p>
                 <p class="descricaoEvento">{{ $evento->descricao }}</p>
-                <p class="participantesEvento">50</p>
+                <p class="participantesEvento">{{ $evento->num_participantes }}</p>
             </div>
+            @endforeach
         </div>
-        @endforeach
     </div>
 @endsection
 
