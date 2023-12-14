@@ -20,7 +20,7 @@ integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9If
         @csrf
 
         <div class="evento text-center">
-            <h2>Inscrições para o evento "$evento"</h2> <!--colocar código para ir buscar o nome do evento -->
+            <h2>Inscrições para o evento {{ $evento->titulo }}</h2> <!--colocar código para ir buscar o nome do evento -->
         </div>
 
         <div class="form-group">
