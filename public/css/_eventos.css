@@ -59,8 +59,13 @@ h1.titulo {
     gap: 40px;
 }
 
+.row>* {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
 .linha4 .evento img {
-    border-radius: 9px 9px 9px 9px;
+    border-radius: 9px 9px 0px 0px;
     height: 150px;
     object-fit: cover;
 }
@@ -113,6 +118,7 @@ h1.titulo {
     width: 100%;
     display: inline-block;
     text-align: center;
+    cursor: pointer;
 }
 
 
