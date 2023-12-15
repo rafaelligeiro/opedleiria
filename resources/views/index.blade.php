@@ -83,7 +83,7 @@
         <div class="linha4">
             @foreach($eventos->take(3) as $evento)
             <div class="evento">
-                <img src="{{$evento->imagem}}" alt="">
+                <img src="{{ asset('storage/imagens_eventos/'.$evento->imagem) }}" alt="{{ $evento->titulo }}">
                 <div class="content">
                     <div>
                         <h2 class="tituloEvento">{{ $evento->titulo }}</h2>
