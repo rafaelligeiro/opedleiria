@@ -6,7 +6,7 @@
 
 body{
     font-family: 'Montserrat', sans-serif;
-    background-color: #f8f9fa;
+    background-color: #e0e4e8;
 }
 
 .navbar {
@@ -36,103 +36,36 @@ h1.titulo {
     font-weight: bold;
 }
 
-section.cards {
-    width: 100%;
-    height: 300px; /* Ajuste conforme necessário */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    background-color: #f8f9fa; /* Cor de fundo da seção */
-    padding: 20px;
-    margin-bottom: 70px;
-
-}
-
-.card {
-    width: 320px; /* Largura do cartão */
-    height: 290px;
-    margin: 30px;
-    border-bottom: 1px solid #ddd; /* Borda do cartão */
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.card img {
-    width: auto;
-    height: 100%; /* Altura da imagem */
-    object-fit: cover;
-}
-
-.card-content {
-    padding: 15px;
-    font-weight: lighter;
-    color: #525C60;
-    font-size: 10px;
-    border: 1px solid white;
-    border-radius: 30px;
-    background-color: white;
-    position:absolute;
-    margin-top: 140px;
-}
-
-
-.card-content h3{
-    font-size: 18px;
-    font-weight: bold;
-    color: #0C6A6A;
-}
-
-.card-content .btn {
-    background-color: #274C5B;
-    border-color: #274C5B;
-    color: #f8f9fa;
-    padding: 8px 12px;
-    border-radius: 15px;
-    cursor: pointer;
-    font-size: 13px;
-    text-align: center;
-    position: relative;
-    margin-left: 2px;
-}
-.card-content .btn i {
-    right: 10px;
-    transition: opacity 0.3s ease-in-out;
-    color: #f8f9fa;
-}
-
-.card-content .btn:hover {
-    background-color: white;
-    border: 1px solid #274C5B;
-    color: #0C6A6A;
-}
-
-
-.eventos {
+.linha4 {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     height: fit-content;
-    margin-bottom: 50px;
-    gap: 25px;
-    max-width: 1200px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
-.eventos .evento {
+.linha4 .evento {
     background-color: white;
-    width: 33%;
+    flex: 1;
+    max-width: 400px;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
-.eventos .evento img {
-    border-radius: 20px 20px 0px 0px;
+.linha4 .row {
+    gap: 40px;
+}
+
+.linha4 .evento img {
+    border-radius: 9px 9px 9px 9px;
     height: 150px;
     object-fit: cover;
 }
 
-.eventos .evento .content {
+.linha4 .evento .content {
     padding: 30px;
     display: flex;
     height: 100%;
@@ -140,12 +73,12 @@ section.cards {
     justify-content: space-between;
 }
 
-.eventos .evento .content h2 {
+.linha4 .evento .content h2 {
     font-size: 22px;
     margin-bottom: 5px;
 }
 
-.eventos .evento .content .boxes {
+.linha4 .evento .content .boxes {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
@@ -153,7 +86,7 @@ section.cards {
     gap: 10px;
 }
 
-.eventos .evento .content .boxes .box {
+.linha4 .evento .content .boxes .box {
     align-items: center;
     text-align: center;
     background-color: #eaeaea;
@@ -163,13 +96,13 @@ section.cards {
     height: fill;
 }
 
-.eventos .evento .content .boxes .box .meio {
+.linha4 .evento .content .boxes .box .meio {
     font-size: 40px;
     font-weight: 700;
     line-height: 40px;
 }
 
-.eventos .evento .content .button-sec {
+.button-sec {
     font-size: 20px;
     color: white;
     background-color: #031C1D;
@@ -178,6 +111,8 @@ section.cards {
     border: 0;
     transition: all 0.2s ease;
     width: 100%;
+    display: inline-block;
+    text-align: center;
 }
 
 
