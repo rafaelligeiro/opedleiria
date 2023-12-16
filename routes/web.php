@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\DoacaoController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\MensagemController;
 use App\Http\Controllers\InscricaoController;
@@ -24,6 +25,7 @@ Route::get('/',[PageController::class,'index'])->name('index');
 Route::get('/message',[PageController::class,'message'])->name('message');
 Route::get('/sobre',[PageController::class,'sobre'])->name('sobre');
 Route::get('/eventos',[PageController::class,'eventos'])->name('eventos');
+Route::get('/eventos',[PageController::class,'eventos'])->name('eventos');
 Route::get('/perfil',[PageController::class,'perfil'])->name('perfil');
 Route::put('/perfil/update',[PageController::class,'updatePerfil'])->name('updatePerfil');
 
@@ -34,6 +36,7 @@ Route::group(['middleware' => ['auth', 'verified'], 'as' => 'admin.',
     Route::delete('/users/{user}/destroy_photo',[UserController::class, 'destroy_photo'])->name('users.destroyPhoto');
     Route::resource('users', UserController::class);
     Route::resource('/eventos', EventoController::class); //nao apagar Marcelino
+    Route::resource('/doacoes', DoacaoController::class);
 });
 Route::get('evento/{evento}/inscricoes',[InscricaoController::class,'create'])->name('inscricoes.create')->middleware(['auth', 'verified']);
 Route::post('evento/{evento}/inscricoes',[InscricaoController::class,'store'])->name('inscricoes.store')->middleware(['auth', 'verified']);

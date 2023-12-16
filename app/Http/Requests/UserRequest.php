@@ -23,11 +23,11 @@ class UserRequest extends FormRequest
     {
         return [
           'name'=>'required|min:3|max:40|regex:/^[A-ZÀ-úa-z\s]+$/',
-           'email' =>'required|email|unique:users,email,'.
+           'email' =>'required|email|unique:users,email'.
                     ($this->user?$this->user->id:''),
            'photo' =>'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
            'role' => 'required|in:A,M,F',
-          
+
         ];
     }
     public function messages(): array

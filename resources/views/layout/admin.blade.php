@@ -66,16 +66,31 @@
             </li>
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePosts"
-                    aria-expanded="true" aria-controls="collapsePosts">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEvents"
+                    aria-expanded="true" aria-controls="collapseEvents">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Eventos</span>
                 </a>
-                <div id="collapsePosts" class="collapse" aria-labelledby="headingPosts" data-parent="#accordionSidebar">
+                <div id="collapseEvents" class="collapse" aria-labelledby="headingEvents" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Eventos:</h6>
                         <a class="collapse-item" href="{{route('admin.eventos.index')}}">Listagem</a>
                         <a class="collapse-item" href="{{route('admin.eventos.create')}}">Criar Novo</a>
+                        <div class="collapse-divider"></div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDonation"
+                    aria-expanded="true" aria-controls="collapseDonation">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Doações</span>
+                </a>
+                <div id="collapseDonation" class="collapse" aria-labelledby="headingDonation" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Doações:</h6>
+                        <a class="collapse-item" href="{{route('admin.doacoes.index')}}">Listagem</a>
                         <div class="collapse-divider"></div>
                     </div>
                 </div>

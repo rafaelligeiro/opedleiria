@@ -11,7 +11,7 @@ class DoacaoRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,12 @@ class DoacaoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'quantidade' => 'required|integer|min:1',
+            'tipo_pagamento' => 'required|enum',
+            'nome' => 'required|min:3|max:40|regex:/^[A-ZÀ-úa-z\s]+$/',
+            'data' => 'required|date',
+            'descricao' => 'text|max:255',
+            'email' =>'required|email',
         ];
     }
 }

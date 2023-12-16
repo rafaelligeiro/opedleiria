@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Doacao;
 use App\Models\Evento;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\PerfilRequest;
+use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Auth;
 
 class PageController extends Controller
@@ -54,17 +56,13 @@ class PageController extends Controller
 
     public function admindashboard()
     {
-        /*$count_projects = Project::count();
-        $count_categories = Category::count();
+        $count_eventos = Evento::count();
+        $count_doacoes = Doacao::count();
         $count_users = User::count();
         $count_users_per_role = User::select('role', DB::raw('count(*) as
        count'))->groupBy('role')->get();
-        $count_projects_per_user = User::withCount('projects')->get();
-        $count_projects_per_category = Category::withCount('projects')->get();
-        return view('_admin.dashboard', compact('count_projects',
-            'count_categories', 'count_users', 'count_users_per_role',
-            'count_projects_per_user', 'count_projects_per_category'));
-        */
+        return view('_admin.dashboard', compact('count_doacoes',
+            'count_eventos', 'count_users', 'count_users_per_role'));
 	return view('_admin.dashboard');
     }
 }

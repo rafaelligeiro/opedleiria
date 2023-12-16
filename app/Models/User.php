@@ -2,12 +2,12 @@
 
 namespace App\Models;
 
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
@@ -69,13 +69,9 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->role == 'A';
     }
 
-	/*CRIAR MÉTODO SIMILAR PARA TODOS OS RELACIONAMENTOS COM A TABELA DOS USERS
-	public function projects()
+	public function doacoes()
     {
-        return $this->hasMany(Project::class);
-        //Quando as chaves não seguem as convenções
-        //return $this->hasMany(Project::class,'user_id','id');
+        return $this->hasMany(Doacao::class, 'id_doacao');
     }
-	*/
 
 }

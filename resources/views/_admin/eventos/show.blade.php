@@ -10,7 +10,7 @@
             <div class="card-body">
 
                 <div>
-                    <img alt="Post image" src="{{ asset('public/img/' . $evento->imagem) }}">
+                    <img src="{{asset('storage/imagens_eventos/'.$evento->imagem)}}"class="img-post" alt="Event image">
                 </div>
 
                 <div><strong>Titulo:</strong> {{ $evento->titulo }} </div>
