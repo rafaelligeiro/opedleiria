@@ -44,7 +44,7 @@
         </table>
       </div>
       @else
-      <h6>Não existem doações registados</h6>
+      <h6>Não existem doações registadas</h6>
       @endif
     </div>
   </div>
