@@ -15,13 +15,15 @@
 
                 <div><strong>Titulo:</strong> {{ $evento->titulo }} </div>
                 <div><strong>Descrição:</strong> {{ $evento->descricao }} </div>
+                <br>
+                <br>
                 @if (count($evento->inscricoes))
                 <div >
                     <h3>Inscrições</h3>
                     <ul>
                         @foreach($evento->inscricoes as $inscricao)
                         <li>
-                            {{$inscricao->nome}}
+                            <strong>Nome:</strong> {{$inscricao->nome}} - {{$inscricao->quantidade}} pessoas
                         </li>
                         @endforeach
                     </ul>

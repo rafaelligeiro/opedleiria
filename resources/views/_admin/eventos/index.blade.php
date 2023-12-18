@@ -34,7 +34,15 @@
               <td>{{$evento->data}}</td>
               <td>{{$evento->titulo}}</td>
               <td>{{$evento->descricao}}</td>
-              <td>{{$evento->num_inscricoes}}</td>
+              <td>
+                    @if (count($evento->inscricoes))
+                            @foreach($evento->inscricoes as $inscricao)
+                            <li>
+                                {{$inscricao->quantidade}}
+                            </li>
+                            @endforeach
+                    @endif
+                </td>
               <td nowrap>
                 <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.eventos.show',$evento)}}"><i class="fas fa-eye fa-xs"></i></a>
                 <a class="btn btn-xs btn-warning btn-p" href="{{route('admin.eventos.edit',$evento)}}"><i class="fas fa-pen fa-xs"></i></a>
@@ -52,7 +60,7 @@
         </table>
       </div>
       @else
-      <h6>Não existem projetos registados</h6>
+      <h6>Não existem eventos registados</h6>
       @endif
     </div>
   </div>

@@ -68,6 +68,12 @@ class EventoController extends Controller
 
     public function destroy(Evento $evento)
     {
+        /*if (count($evento->inscricoes)) {
+            return redirect()->route('admin.eventos.index')->withErrors(
+                ['delete' => 'O evento que tentou eliminar tem inscrições
+           associadas', ]);
+        }
+        */
         Storage::disk('public')->delete('imagens_eventos/' .$evento->imagem);
         $evento->delete();
 

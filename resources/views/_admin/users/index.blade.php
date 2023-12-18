@@ -48,7 +48,7 @@
                                         <th>Name</th>
                                         <th>Email</th>
                                         <th>Role</th>
-                                        <th>Actions</th>
+                                        <th>Ações</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -66,7 +66,7 @@
                                             </td>
                                             <td>{{ $user->name }}</td>
                                             <td>{{ $user->email }}</td>
-                                            <td>{{ $user->roleToStr() }}</td>
+                                            <td>{{ $user->role }}</td>
                                             <td nowrap>
                                                 <a class="btn btn-xs btn-primary btn-p"
                                                     href="{{ route('admin.users.show', $user) }}"><i
