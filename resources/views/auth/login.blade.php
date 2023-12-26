@@ -11,7 +11,11 @@
             Entrar na Conta
         </h1>
         <form class="my-8" method="POST" action="{{ route('login') }}">
-            @csrf
+            @csrf @error('email')
+            <span class="invalid-feedback block" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
             <label
                 for="email"
                 class="block my-2 text-sm font-medium text-gray-900"
@@ -49,11 +53,6 @@
                     autofocus
                     placeholder="valentim@opedleiria.pt"
                 />
-                @error('email')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-                @enderror
             </div>
             <label
                 for="password"
@@ -93,7 +92,7 @@
                     autocomplete="current-password"
                 />
                 @error('password')
-                <span class="invalid-feedback" role="alert">
+                <span class="invalid-feedback block" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
                 @enderror

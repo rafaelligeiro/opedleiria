@@ -11,7 +11,28 @@
             Registar Conta
         </h1>
         <form class="my-8" method="POST" action="{{ route('register') }}">
-            @csrf
+            @csrf @error('password')
+            <span
+                class="invalid-feedback block bg-red-100 px-4 py-3 my-2 rounded-xl border-1 border-red-200"
+                role="alert"
+            >
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror @error('email')
+            <span
+                class="invalid-feedback block bg-red-100 px-4 py-3 my-2 rounded-xl border-1 border-red-200"
+                role="alert"
+            >
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror @error('name')
+            <span
+                class="invalid-feedback block bg-red-100 px-4 py-3 my-2 rounded-xl border-1 border-red-200"
+                role="alert"
+            >
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
             <div class="flex justify-between gap-2 md:flex-row flex-col">
                 <div class="w-full">
                     <label
@@ -47,11 +68,6 @@
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
                             placeholder="Valentim"
                         />
-                        @error('name')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
                     </div>
                 </div>
             </div>
@@ -86,11 +102,6 @@
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
                     placeholder="valentim@opedleiria.pt"
                 />
-                @error('email')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-                @enderror
             </div>
             <div class="flex justify-between gap-2 md:flex-row flex-col">
                 <div class="w-full">
@@ -129,11 +140,6 @@
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
                             placeholder="***************"
                         />
-                        @error('password')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
                     </div>
                 </div>
                 <div class="w-full">

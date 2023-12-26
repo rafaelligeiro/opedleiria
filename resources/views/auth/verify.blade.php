@@ -21,10 +21,10 @@ OPEDLeiria') @section('styles') @vite('resources/css/app.css') @endsection
         @endif
         {{
             __(
-                "Before proceeding, please check your email for a verification link."
+                "Antes de continuar, verifique seu e-mail para obter um link de verificação."
             )
         }}
-        {{ __("If you did not receive the email") }},
+        {{ __("Se você não recebeu o e-mail") }},
         <form
             class="my-8"
             method="POST"
