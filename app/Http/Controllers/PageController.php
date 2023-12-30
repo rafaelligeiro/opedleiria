@@ -20,6 +20,9 @@ class PageController extends Controller
     public function message(){
         return view('message');
     }
+    public function donate(){
+        return view('donate');
+    }
     public function sobre(){
         return view('sobre');
     }

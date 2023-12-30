@@ -23,6 +23,7 @@ use App\Http\Controllers\InscricaoController;
 
 Route::get('/',[PageController::class,'index'])->name('index');
 Route::get('/message',[PageController::class,'message'])->name('message');
+Route::get('/donate',[PageController::class,'donate'])->name('donate');
 Route::get('/sobre',[PageController::class,'sobre'])->name('sobre');
 Route::get('/eventos',[PageController::class,'eventos'])->name('eventos');
 Route::get('/eventos',[PageController::class,'eventos'])->name('eventos');
