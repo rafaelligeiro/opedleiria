@@ -1,15 +1,15 @@
 .all{
-    font-family: 'Poppins', sans-serif;    
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #ffe4c4;
 }
 
 .division{
- display: flex;   
+ display: flex;
 }
 
-.colunas1{   
+.colunas1{
    width: 50%;
 }
 
@@ -42,7 +42,7 @@
 .formDiv .texth2{
     margin-top: 0;
     margin-left: 20px;
-    font-size: 16px;  
+    font-size: 16px;
     font-weight: 600;
 }
 
@@ -59,62 +59,46 @@
 }
 
 .radio{
-    margin: 0 auto;
-    text-align: center;
-}
-
-.radio h1{
-    margin: 0  0 20px 40px;
-    width: fit-content;
-    font-size: 24px;    
-}
-
-.radio .checkboxes{
-    margin: 0 auto;
-    width: fit-content;
     display: flex;
-    align-items: baseline;
+    width: fit-content;
+    margin: 0 auto;
+    gap: 5rem;
+    align-items: flex-end;
 }
 
-.radio .escolhas{
-    margin-left: 20px;
+
+.radio .QSubTitle{
+    font-size: 16px;
+    font-weight: 600;
 }
 
-.radio .outraInput{
+.radio .quantidadeDoacao{
     background-color: #F9FAFB;
     border: 0;
-    width: 150px;
+    width: 250px;
     height: 30px;
-    border-radius: 10px;
+    border-radius: 10px !important;
     padding-left: 10px;
 }
 
+.radio_input .verificarDoacao{
+    border-radius: 25px;
+    width: 250px;
+    height: auto;
+    background: #129495;
+}
 
-
-/*Excerto feito com a ajuda e explicação de https://codepen.io/t_afif/pen/zYpLpGX*/
-input[type=radio] {
-    --s: 1em; 
-    --c: #129495;
-    
-    height: var(--s);
-    aspect-ratio: 1;
-    border: calc(var(--s)/8) solid #939393;
-    padding: calc(var(--s)/8);
-    background: radial-gradient(farthest-side,var(--c) 94%,#0000) 50%/0 0 no-repeat content-box;
-    border-radius: 50%;
-    outline-offset: calc(var(--s)/10);
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+.verificarDoacao:hover{
     cursor: pointer;
-    font-size: inherit;
-    transition: .3s;
-  }
-  input[type=radio]:checked {
-    border-color: var(--c);
-    background-size: 100% 100%;
-  }
-/*Excerto feito com a ajuda e explicação de https://codepen.io/t_afif/pen/zYpLpGX*/
+}
+
+.verificarDiv{
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+}
+
+
 
 
 .nomes .text{
@@ -142,49 +126,40 @@ input[type=radio] {
     padding-left: 10px;
 }
 
-.pagamento h1{
-    margin: 30px  0 20px 40px;
-    width: fit-content;
-    font-size: 24px;    
-}
 
-.tipos {
-    column-gap: 15px;
-    width: fit-content;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: center;
-}
-
-.items{
+.verificarDoacao{
     display: flex;
     align-items: center;
 }
 
-.items:hover{
-    cursor: pointer;
+.verificarDoacao p{
+    color: white;
+    width: fit-content;
+    margin: 0;
+    padding: 5px 15px 5px 15px;
 }
 
-.items.selected {
-    border-color: #129495;
+.verificarDoacao.selected {
+    border-color: #717f7f;
 }
 
-.items.selected .like {
+.verificarDoacao.selected .like {
     animation: spin 2s 30ms forwards;
 }
 
-.items.selected{
-    animation: colorFill 500ms 10ms forwards;   
+.verificarDoacao.selected{
+    animation: colorFill 500ms 10ms forwards;
 }
 
-.items.selected svg{
+.verificarDoacao.selected svg{
     animation: checked 500ms 1300ms forwards;
 }
 
+
+
 @keyframes colorFill{
     to{
-       background-color: #129495; 
+       background-color: #129495;
     }
 }
 
@@ -207,34 +182,22 @@ input[type=radio] {
 }
 
 svg{
+    width: fit-content;
     align-self: center;
     fill: transparent;
     transform: 0.4s;
+    margin: 0 auto;
 }
 
 
-.tipos .items{
-    padding: 10px 15px;
-    text-align: center;
-    border-radius: 20px;
-    background-color: hsla(180, 78%, 33%, 0.5);
-    color: white;
-}
-
-.items h1{
-  display: flex;
-  width: fit-content;
-  text-align: center;
-  margin: 0 auto;
-  font-size: 16px;  
-}
 
 .like{
- margin-left: 15px;
  border-radius: 100px;
- width: 20px;  
- height: 20px; 
+ width: 20px;
+ height: 20px;
  border: 1.5px solid hsl(180, 79%, 15%, 0.5);
+ display: flex;
+ align-items: center;
 }
 
 .companhia{

@@ -33,71 +33,24 @@
                     </div>
 
                     <div class="radio">
-                        <h1>Quantia da doação</h1>
-                        <div class="checkboxes">
-                            <div class="escolhas">
-                                <input type="radio" checked="checked" name="dinheiro">
-                                <label for="20">20€</label>
+                            <div class="radio_input">
+                                <h2 class="QSubTitle">Quantidade da doação</h2>
+                                <input pattern="[1-9][0-9]*" class="quantidadeDoacao" type="text" name="quantidade">
                             </div>
-                            <div class="escolhas">
-                                <input type="radio" name="dinheiro">
-                                <label for="40">40€</label>
-                            </div>
-                            <div class="escolhas">
-                                <input type="radio" name="dinheiro">
-                                <label for="60">60€</label>
-                            </div>
-                            <div class="escolhas">
-                                <input type="radio" name="dinheiro">
-                                <label for="80">80€</label>
-                            </div>
-                            <div class="escolhas">
-                                <input type="radio" name="dinheiro">
-                                <label for="100">100€</label>
-                            </div>
-                            <div class="escolhas">
-                                <input type="radio" name="dinheiro" id="radioOutra">
-                                <label for="outra">Outra</label>
-                                <input pattern="[0-9]+" id="outraInput" class="outraInput" type="text" name="Outra"
-                                    disabled placeholder="Digite o seu valor">
-                            </div>
-                        </div>
+                            <div class="radio_input">
+                                <div class="verificarDoacao" onclick="selecionarOpcao(this)">
+                                    <div class="verificarDiv">
+                                        <p>Verificar Doação</p>
+                                    <div class="like">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24">
+                                            <path
+                                                d="M0 11c2.761.575 6.312 1.688 9 3.438 3.157-4.23 8.828-8.187 15-11.438-5.861 5.775-10.711 12.328-14 18.917-2.651-3.766-5.547-7.271-10-10.917z" />
+                                        </svg>
+                                    </div>
+                                    </div>
 
-                    </div>
-
-                    <div class="pagamento">
-                        <div class="title">
-                            <h1>Tipo de pagamento</h1>
-                        </div>
-                        <div class="tipos">
-                            <div id="items" class="items" onclick="selecionarOpcao(this)">
-                                <h1>Cartão de Crédito</h1>
-                                <div class="like">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24">
-                                        <path
-                                            d="M0 11c2.761.575 6.312 1.688 9 3.438 3.157-4.23 8.828-8.187 15-11.438-5.861 5.775-10.711 12.328-14 18.917-2.651-3.766-5.547-7.271-10-10.917z" />
-                                    </svg>
                                 </div>
                             </div>
-                            <div id="items" class="items" onclick="selecionarOpcao(this)">
-                                <h1>Ref. Multibanco</h1>
-                                <div class="like">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24">
-                                        <path
-                                            d="M0 11c2.761.575 6.312 1.688 9 3.438 3.157-4.23 8.828-8.187 15-11.438-5.861 5.775-10.711 12.328-14 18.917-2.651-3.766-5.547-7.271-10-10.917z" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div id="items" class="items" onclick="selecionarOpcao(this)">
-                                <h1>PayPal</h1>
-                                <div class="like">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24">
-                                        <path
-                                            d="M0 11c2.761.575 6.312 1.688 9 3.438 3.157-4.23 8.828-8.187 15-11.438-5.861 5.775-10.711 12.328-14 18.917-2.651-3.766-5.547-7.271-10-10.917z" />
-                                    </svg>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="companhia">
@@ -132,51 +85,23 @@
 @section('scripts')
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var radioOutra = document.getElementById('radioOutra');
-        var outraInput = document.getElementById('outraInput');
-
-        var placeholderOriginal = outraInput.placeholder;
-
-        var radioButtons = document.querySelectorAll('[name="dinheiro"]');
-        radioButtons.forEach(function (radio) {
-            radio.addEventListener('change', function () {
-                outraInput.disabled = !radioOutra.checked;
-                if (!radioOutra.checked) {
-                    outraInput.value = "";
-                    outraInput.placeholder = placeholderOriginal;
-                } else {
-                    outraInput.placeholder = "";
-                    outraInput.disabled = false;
-                }
-
-                document.querySelectorAll('.items').forEach(function (item) {
-                    item.classList.remove('selected');
-                });
-            });
-            outraInput.disabled = !radioOutra.checked;
-        });
-
-        const btn = document.querySelector("#btn");
-        const btnText = document.querySelector("#btnText");
-
-        btn.onclick = () => {
-            btnText.innerHTML = "Obrigado!";
-            btn.classList.add("active");
-        };
-
-    });
-
     function selecionarOpcao(element) {
+        var inputQuantidade = document.querySelector('.quantidadeDoacao');
+        var quantidadeValue = inputQuantidade.value;
 
-        element.classList.add('selected');
+        var pattern = /^[1-9][0-9]*$/;
 
-
-        document.querySelectorAll('.items').forEach(function (item) {
-            if (item !== element) {
+        if (!pattern.test(quantidadeValue)) {
+            console.error("Erro: A quantidade da doação deve corresponder ao padrão.");
+        } else {
+            console.log("working");
+            document.querySelectorAll('.verificarDoacao').forEach(function (item) {
                 item.classList.remove('selected');
-            }
-        });
+            });
+
+            document.querySelector('.verificarDoacao').classList.add('selected');
+        }
     }
-</script>    
+
+</script>
 @endsection
