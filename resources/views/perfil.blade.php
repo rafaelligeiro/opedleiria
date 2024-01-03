@@ -1,7 +1,16 @@
 @extends ('layout.master') @section('title', 'Perfil OPEDLeiria')
-@section('styles') @vite('resources/css/app.css') @endsection
+@section('styles')
+
+@vite('resources/css/app.css')
+<script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+@endsection
 @section('classes_body') bg-[#eaeaea] font-poppins @endsection
 @section('content')
+@if (!empty(session('success')))
+@include ('layout.partials.success')
+@endif
 <div
     class="flex m-auto justify-center items-center flex-col md:max-w-[1200px] max-w-[95%]"
 >
@@ -59,6 +68,11 @@
                                 id="inputFullname"
                                 value="{{old('name',$user->name)}}"
                             />
+                            @error('name')
+                            <span class="invalid-feedback block" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                         </div>
                     </div>
                     <div class="w-full">
@@ -100,6 +114,11 @@
                                 id="inputNif"
                                 value="{{old('nif',$user->nif)}}"
                             />
+                            @error('nif')
+                            <span class="invalid-feedback block" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                         </div>
                     </div>
                 </div>
@@ -146,6 +165,11 @@
                             placeholder="exemplo@gmail.com"
                             value="{{old('email',$user->email)}}"
                         />
+                        @error('email')
+                        <span class="invalid-feedback block" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
                 </div>
                 <div class="form-group mb-4">
@@ -162,6 +186,11 @@
                         id="inputM"
                         >{{old('morada',$user->morada)}}</textarea
                     >
+                    @error('morada')
+                    <span class="invalid-feedback block" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                 </div>
                 <div class="form-group flex gap-2">
                     <div class="w-full">
@@ -199,6 +228,11 @@
                                 id="inputCP"
                                 value="{{old('cod_postal',$user->cod_postal)}}"
                             />
+                            @error('cod_postal')
+                            <span class="invalid-feedback block" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                         </div>
                     </div>
                     <div class="w-full">
@@ -235,11 +269,17 @@
                                 class="form-control bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-xl focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 @error('email') is-invalid @enderror"
                                 name="genero"
                                 id="inputGenero"
-                                value="{{old('genero',$user->genero)}}"
                             >
-                                <option>Masculino</option>
-                                <option>Feminino</option>
+                                <option value="M" {{old('genero',$user->genero)=="M"?"selected":""}}>Masculino</option>
+                                <option value="F" {{old('genero',$user->genero)=="F"?"selected":""}}>Feminino</option>
                             </select>
+
+                            @error('genero')
+                            <span class="invalid-feedback block" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
+
                         </div>
                     </div>
                 </div>
@@ -282,6 +322,11 @@
                                 id="inputPhoto"
                                 aria-describedby="fileHelp"
                             />
+                            @error('photo')
+                            <span class="invalid-feedback block" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                         </div>
                         <small id="fileHelp" class="text-gray-500 text-xs">
                             O tamanho da imagem não deve exceder 2MB.
@@ -329,6 +374,11 @@
                                 id="inputTelefone"
                                 value="{{old('telefone',$user->telefone)}}"
                             />
+                            @error('telefone')
+                            <span class="invalid-feedback block" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                            @enderror
                         </div>
                     </div>
                 </div>

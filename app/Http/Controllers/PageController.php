@@ -53,7 +53,7 @@ class PageController extends Controller
         }
 
         $user->save();
-        return redirect()->route('updatePerfil');
+        return redirect()->route('updatePerfil')->with('success', 'Utilizador atualizado com sucesso');;
     }
 
 

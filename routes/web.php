@@ -28,6 +28,7 @@ Route::get('/sobre',[PageController::class,'sobre'])->name('sobre');
 Route::get('/eventos',[PageController::class,'eventos'])->name('eventos');
 Route::get('/eventos',[PageController::class,'eventos'])->name('eventos');
 Route::get('/perfil',[PageController::class,'perfil'])->name('perfil');
+Route::put('/perfil',[PageController::class,'updatePerfil'])->name('updatePerfil');
 Route::group(['middleware' => ['auth', 'verified'], 'as' => 'admin.','prefix' => 'admin'], function () {
     Route::get('/', [PageController::class, 'admindashboard'])->name('dashboard');
     Route::get('/users/{user}/send_reactivate_mail',[UserController::class, 'send_reactivate_email'])->name('users.sendActivationEmail');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
 class PerfilRequest extends FormRequest
@@ -24,7 +25,7 @@ class PerfilRequest extends FormRequest
         return [
           'name'=>'required|min:3|max:40|regex:/^[A-ZÀ-úa-z\s]+$/',
            'email' =>'required|email|unique:users,email,'.
-                    ($this->user?$this->user->id:''),
+                    (Auth::check()?Auth::user()->id:''),
            'photo' =>'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
            'data_nasc' => 'nullable|date|date_format:Y-m-d',
            'nif' => 'nullable|integer|digits:9',
