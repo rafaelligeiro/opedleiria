@@ -12,12 +12,20 @@
 @endsection
 
 @section('content')
+
+@if (!empty(session('success')))
+<div class="alert alert-success alert-dismissible fade show" style="margin: 0 auto !important; width:500px;" role="alert">
+working
+</div>
+@endif
+
 <div class="all">
         <div class="division">
             <div class="colunas1">
                 <img class="imagem" src="{{asset('img/retrato-de-homem-com-deficiencia-com-fones-de-ouvido.png')}}" alt="Pessoa com Trissomia 21">
             </div>
-            <form class="formClass" action="#">
+            <form class="formClass" action="{{route('makeDonation.store')}}" method="POST">
+                @csrf
                 <div class="formDiv">
                     <h1 class="text" >Faça uma doação</h1>
                     <h2 class="texth2" >Todas as doações, por mais pequenas que sejam <span class="ajudamSpan">ajudam</span></h2>
@@ -53,8 +61,25 @@
                             </div>
                     </div>
 
+                    <div class="tipoPagamento">
+                        <div class="options">
+                            <div class="items">
+                                <p>Cartão de Crédito</p>
+                                <input type="radio" name="tipo_pagamento" value="Cartão">
+                            </div>
+                            <div class="items">
+                                <p>MBway</p>
+                                <input type="radio" name="tipo_pagamento" value="MBWay">
+                            </div>
+                            <div class="items">
+                                <p>PayPal</p>
+                                <input type="radio" name="tipo_pagamento" value="Referência">
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="companhia">
-                        <input type="text" name="companhia" placeholder="Nome da companhia(se aplicável)">
+                        <input type="text" name="descricao" placeholder="Motivo da doação">
                     </div>
 
                     <div class="notification">
@@ -63,7 +88,7 @@
                     </div>
 
                     <div class="submitButton">
-                        <button id="btn" class="buttonFinal">
+                        <button type="submit" id="btn" class="buttonFinal">
                             <p id="btnText" style="margin-bottom:0;" >Doar</p>
                             <div class="check-box">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
@@ -95,13 +120,26 @@
             console.error("Erro: A quantidade da doação deve corresponder ao padrão.");
         } else {
             console.log("working");
-            document.querySelectorAll('.verificarDoacao').forEach(function (item) {
-                item.classList.remove('selected');
-            });
 
-            document.querySelector('.verificarDoacao').classList.add('selected');
+            // Adicionar a classe 'selected' apenas se o input não estiver ativo
+            if (document.activeElement !== inputQuantidade) {
+                document.querySelectorAll('.verificarDoacao').forEach(function (item) {
+                    item.classList.remove('selected');
+                });
+
+                document.querySelector('.verificarDoacao').classList.add('selected');
+            }
         }
     }
 
+    // Adicionar um listener para reverter a animação ao focar no input
+    var inputQuantidade = document.querySelector('.quantidadeDoacao');
+    inputQuantidade.addEventListener('focus', function() {
+        document.querySelectorAll('.verificarDoacao').forEach(function (item) {
+            item.classList.remove('selected');
+        });
+    });
 </script>
+
+
 @endsection

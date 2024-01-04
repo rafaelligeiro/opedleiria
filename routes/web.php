@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DoacaoController;
+use App\Http\Controllers\makeDonationController;
 use App\Http\Controllers\EventoController;
 use App\Http\Controllers\MensagemController;
 use App\Http\Controllers\InscricaoController;
@@ -41,4 +42,5 @@ Route::get('evento/{evento}/inscricoes',[InscricaoController::class,'create'])->
 Route::post('evento/{evento}/inscricoes',[InscricaoController::class,'store'])->name('inscricoes.store')->middleware(['auth', 'verified']);
 Route::post('mensagens',[MensagemController::class,'store'])->name('mensagens.store');
 
+Route::post('makeDonation',[makeDonationController::class,'store'])->name('makeDonation.store');
 Auth::routes(['verify' => true]);

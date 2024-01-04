@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer('quantidade');
             $table->enum('tipo_pagamento', ['Cartão', 'MBWay', 'Referência']);
             $table->string('nome');
-            $table->dateTime('data');
+            $table->dateTime('data')->default(now());
             $table->text('descricao');
             $table->string('email', 120)->unique();
 
