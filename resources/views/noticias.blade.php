@@ -14,33 +14,26 @@
 @section('content')
     <div class="hero-section">
         <div class="content">
-            <h1>Noticias</h1>
+            <h1>Notícias</h1>
             <p>Fique a par de tudo o que acontece na OPEDLeiria</p>
-            <button class="button-sec">Saber Mais</button>
-            <button class="button-white">Doar</button>
         </div>
     </div>
     <div class="container">
         <div class="linha1">
             <div class="noticia">
-                <img src="" alt="">
+                <img src="https://i.imgur.com/Rp1maML.jpg" alt="">
                 <div class="content">
                     <div>
-                        <h2 class="tituloNoticia"></h2>
-                        <p class="descricaoNoticia"></p>
+                        <h2 class="tituloNoticia">Inauguração OPEDLeiria</h2>
+                        <p class="descricaoNoticia">A OPEDLeiria anúncia com todo o gosto a sua inaugaração oficial.</p>
+                        <p class="categoriaNoticia">Categoria: Novidades</p>
                     </div>
                     <div>
                         <div class="boxes">
                             <div class="box">
-                                <p class="cima">9:00</p>
+                                <p class="cima">2023</p>
                                 <p class="meio">20</p>
                                 <p class="baixo">Dezembro</p>
-
-                            </div>
-                            <div class="box">
-                                <p class="cima">Máximo</p>
-                                <p class="meio">5</p>
-                                <p class="baixo">Participantes</p>
                             </div>
                         </div>
                         <button class="button-sec">Ler Noticia</button>

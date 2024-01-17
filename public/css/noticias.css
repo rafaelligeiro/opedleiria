@@ -53,7 +53,7 @@ h2 {
 
 .hero-section {
     width: 100vw;
-    height: 650px;
+    height: 500px;
     background-image: url('../img/hero-index.png');
     background-size: cover;
     background-position: top;
@@ -128,12 +128,10 @@ h2 {
     margin-bottom: 5px;
 }
 
-.linha1 .noticia .content .boxes {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-    margin-bottom: 15px;
-    gap: 10px;
+.linha1 .noticia .content .categoriaNoticia {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-weight: 500;
 }
 
 .linha1 .noticia .content .boxes .box {
@@ -142,8 +140,9 @@ h2 {
     background-color: #eaeaea;
     padding: 20px;
     border-radius: 10px;
-    width: 50%;
+    width: fill;
     height: fill;
+    margin-bottom: 15px;
 }
 
 .linha1 .noticia .content .boxes .box .meio {
