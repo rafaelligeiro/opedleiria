@@ -4,11 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Doacao;
 use App\Models\Evento;
-<<<<<<< Updated upstream
 use App\Models\Noticia;
-=======
 use App\Models\Mensagem;
->>>>>>> Stashed changes
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\PerfilRequest;
@@ -77,20 +74,12 @@ class PageController extends Controller
     {
         $count_eventos = Evento::count();
         $count_doacoes = Doacao::count();
-<<<<<<< Updated upstream
         $count_noticias = Noticia::count();
-=======
-        $count_mensagens = Mensagem::count();
->>>>>>> Stashed changes
         $count_users = User::count();
         $count_users_per_role = User::select('role', DB::raw('count(*) as
        count'))->groupBy('role')->get();
         return view('_admin.dashboard', compact('count_doacoes',
-<<<<<<< Updated upstream
             'count_eventos', 'count_users','count_noticias', 'count_users_per_role'));
-=======
-            'count_eventos', 'count_mensagens', 'count_users', 'count_users_per_role'));
->>>>>>> Stashed changes
 	return view('_admin.dashboard');
     }
 }
