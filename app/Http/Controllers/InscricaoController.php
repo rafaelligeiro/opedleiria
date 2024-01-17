@@ -9,6 +9,36 @@ use App\Http\Requests\InscricaoRequest;
 
 class InscricaoController extends Controller
 {
+
+
+    public function index()
+    {
+        $inscricoes = Inscricao::all();
+        return view('_admin.inscricoes.index', compact('inscricoes'));
+    }
+
+    public function show(Inscricao $inscricao)
+    {
+
+        return view('_admin.inscricoes.show', compact('inscricao'));
+    }
+
+    public function edit(Inscricao $inscricao)
+    {
+
+        return view('_admin.inscricoes.edit', compact('inscricao'));
+    }
+
+    public function update(InscricaoRequest $request, Evento $evento)
+    {
+        $dadosInscricao = $request->validated();
+
+        $inscricao->update($dadosInscricao);
+
+        return redirect()->route('admin.inscricoes.index')->with('success', 'Inscricão atualizada com sucesso!');
+    }
+
+
     public function  create(Evento $evento)
     {
         return view('inscricao',compact('evento'));
@@ -23,5 +53,15 @@ class InscricaoController extends Controller
         $inscricao->save();
         return redirect()->back()
             ->with('success', 'Inscricao criada com sucesso');
+    }
+
+
+    public function destroy(Inscricao $inscricao)
+    {
+
+
+        $inscricao->delete();
+
+        return redirect()->route('admin.inscricoes.index')->with('success', 'A inscricão foi excluida com sucesso!');
     }
 }
