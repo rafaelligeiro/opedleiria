@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Doacao;
 use App\Models\Evento;
+use App\Models\Noticia;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\PerfilRequest;
@@ -15,6 +16,7 @@ class PageController extends Controller
     public function index(){
         $eventos = Evento::all();
         $doacoes = Doacao::all();
+        $noticias = Noticia::all();
         return view('index', compact('doacoes', 'eventos'));
     }
     public function message(){
@@ -32,7 +34,8 @@ class PageController extends Controller
 
     }
     public function noticias(){
-        return view('noticias');
+        $noticias = Noticia::all();
+        return view('noticias', compact('noticias'));
 
     }
     public function perfil(){
@@ -65,11 +68,12 @@ class PageController extends Controller
     {
         $count_eventos = Evento::count();
         $count_doacoes = Doacao::count();
+        $count_noticias = Noticia::count();
         $count_users = User::count();
         $count_users_per_role = User::select('role', DB::raw('count(*) as
        count'))->groupBy('role')->get();
         return view('_admin.dashboard', compact('count_doacoes',
-            'count_eventos', 'count_users', 'count_users_per_role'));
+            'count_eventos', 'count_users','count_noticias', 'count_users_per_role'));
 	return view('_admin.dashboard');
     }
 }

@@ -15,10 +15,5 @@ class Noticia extends Model
         'descricao',
         'data',
     ];
-
-    public function funcionario()
-    {
-        return $this->belongsTo(Funcionario::class, 'id_func');
-    }
 }
 

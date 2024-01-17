@@ -19,28 +19,32 @@
         </div>
     </div>
     <div class="container">
-        <div class="linha1">
-            <div class="noticia">
-                <img src="https://i.imgur.com/Rp1maML.jpg" alt="">
-                <div class="content">
-                    <div>
-                        <h2 class="tituloNoticia">Inauguração OPEDLeiria</h2>
-                        <p class="descricaoNoticia">A OPEDLeiria anúncia com todo o gosto a sua inaugaração oficial.</p>
-                        <p class="categoriaNoticia">Categoria: Novidades</p>
-                    </div>
-                    <div>
-                        <div class="boxes">
-                            <div class="box">
-                                <p class="cima">2023</p>
-                                <p class="meio">20</p>
-                                <p class="baixo">Dezembro</p>
+        @foreach($noticias->chunk(3) as $noticiasChunk)
+            <div class="linha1">
+                @foreach($noticiasChunk as $noticia)
+                    <div class="noticia">
+                        <div class="content">
+                            <div>
+                                <h2 class="tituloNoticia">{{ $noticia->titulo }}</h2>
+                                <p class="categoriaNoticia">{{ $noticia->categoria }}</p>
+                                <p class="descricaoNoticia">{{ $noticia->descricao }}</p>
+                            </div>
+                            <div>
+                                <div class="boxes">
+                                    <div class="box">
+                                        <p class="cima">{{ \Carbon\Carbon::parse($noticia->data)->format('H:i') }}</p>
+                                        <p class="meio">{{ \Carbon\Carbon::parse($noticia->data)->format('d') }}</p>
+                                        <p class="baixo">{{ \Carbon\Carbon::parse($noticia->data)->format('F') }}</p>
+                                    </div>
+                                </div>
+                                <a class="button-sec" href="">Ler Noticia</a>
+
                             </div>
                         </div>
-                        <button class="button-sec">Ler Noticia</button>
                     </div>
-                </div>
+                @endforeach
             </div>
-        </div>
+        @endforeach
     </div>
 @endsection
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UserRequest extends FormRequest
@@ -23,11 +24,15 @@ class UserRequest extends FormRequest
     {
         return [
           'name'=>'required|min:3|max:40|regex:/^[A-ZÀ-úa-z\s]+$/',
-           'email' =>'required|email|unique:users,email'.
-                    ($this->user?$this->user->id:''),
+           'email' =>'required|email|unique:users,email,'.
+                    (Auth::check()?Auth::user()->id:''),
            'photo' =>'nullable|image|mimes:jpg,png,jpeg,gif|max:2048',
-           'role' => 'required|in:A,M,F',
-
+           'data_nasc' => 'nullable|date|date_format:Y-m-d',
+           'nif' => 'nullable|integer|digits:9',
+           'morada' => 'nullable',
+           'cod_postal' => 'nullable|string|max:9',
+           'telefone' => 'nullable|integer|digits:9',
+           'genero' => 'required|in:M,F',
         ];
     }
     public function messages(): array
