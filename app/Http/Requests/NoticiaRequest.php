@@ -11,7 +11,7 @@ class NoticiaRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,10 @@ class NoticiaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'titulo' => 'required|string|max:255',
+            'categoria' => 'required|in:Desporto,Social,Eventos,Comunidade,Novidades,Histórias',
+            'descricao' => 'required|string',
+            'data' => 'required|date',
         ];
     }
 }

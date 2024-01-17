@@ -5,10 +5,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DoacaoController;
-use App\Http\Controllers\makeDonationController;
 use App\Http\Controllers\EventoController;
+use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\MensagemController;
 use App\Http\Controllers\InscricaoController;
+use App\Http\Controllers\makeDonationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +28,6 @@ Route::get('/message',[PageController::class,'message'])->name('message');
 Route::get('/donate',[PageController::class,'donate'])->name('donate');
 Route::get('/sobre',[PageController::class,'sobre'])->name('sobre');
 Route::get('/eventos',[PageController::class,'eventos'])->name('eventos');
-Route::get('/eventos',[PageController::class,'eventos'])->name('eventos');
 Route::get('/perfil',[PageController::class,'perfil'])->name('perfil');
 Route::put('/perfil',[PageController::class,'updatePerfil'])->name('updatePerfil');
 Route::group(['middleware' => ['auth', 'verified'], 'as' => 'admin.','prefix' => 'admin'], function () {
@@ -36,6 +36,7 @@ Route::group(['middleware' => ['auth', 'verified'], 'as' => 'admin.','prefix' =>
     Route::delete('/users/{user}/destroy_photo',[UserController::class, 'destroy_photo'])->name('users.destroyPhoto');
     Route::resource('users', UserController::class);
     Route::resource('/eventos', EventoController::class);
+    Route::resource('/noticias', NoticiaController::class);
     Route::resource('/doacoes', DoacaoController::class);
 });
 Route::get('evento/{evento}/inscricoes',[InscricaoController::class,'create'])->name('inscricoes.create')->middleware(['auth', 'verified']);
