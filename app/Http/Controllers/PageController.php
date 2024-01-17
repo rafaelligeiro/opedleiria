@@ -74,11 +74,12 @@ class PageController extends Controller
     {
         $count_eventos = Evento::count();
         $count_doacoes = Doacao::count();
+        $count_mensagens = Mensagem::count();
         $count_noticias = Noticia::count();
         $count_users = User::count();
         $count_users_per_role = User::select('role', DB::raw('count(*) as
        count'))->groupBy('role')->get();
-        return view('_admin.dashboard', compact('count_doacoes',
+        return view('_admin.dashboard', compact('count_doacoes', 'count_mensagens',
             'count_eventos', 'count_users','count_noticias', 'count_users_per_role'));
 	return view('_admin.dashboard');
     }

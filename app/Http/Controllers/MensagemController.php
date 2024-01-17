@@ -33,4 +33,24 @@ class MensagemController extends Controller
         return redirect()->back()
             ->with('success', 'Mensagem criada com sucesso');
     }
+
+
+    public function destroy($id)
+{
+    try {
+        $mensagem = Mensagem::findOrFail($id);
+        $mensagem->delete();
+
+    return redirect()->route('admin.mensagens.index')->with('success', 'Mensagem excluída com sucesso!');
+    } catch (\Exception $e) {
+        dd($e->getMessage()); // Exibir mensagem de erro
+        return redirect()->route('admin.mensagens.index')->with('error', 'Erro ao excluir mensagem.');
+    }
+}
+
+
+
+
+
+
 }
