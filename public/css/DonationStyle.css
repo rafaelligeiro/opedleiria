@@ -10,7 +10,7 @@
 }
 
 .colunas1{
-   width: 50%;
+   width: 45%;
 }
 
 .colunas1 .imagem{
@@ -24,9 +24,9 @@
 }
 
 .formDiv{
-    top: 15%;
+    top: 10%;
     position: absolute;
-    height: 700px;
+    height: 600px;
     width: 700px;
     background-color: #EAEAEA;
     border-radius: 25px;
@@ -140,19 +140,33 @@
 }
 
 .verificarDoacao.selected {
-    border-color: #717f7f;
+    border-color: #046060;
 }
 
 .verificarDoacao.selected .like {
     animation: spin 2s 30ms forwards;
 }
 
+.verificarDoacao.error .like {
+    animation: spinError 2s 30ms forwards;
+}
+
 .verificarDoacao.selected{
     animation: colorFill 500ms 10ms forwards;
 }
 
+.verificarDoacao.error{
+    transition: ease-in-out 500ms;
+    background: rgb(255, 0, 0);
+}
+
 .verificarDoacao.selected svg{
     animation: checked 500ms 1300ms forwards;
+}
+
+.verificarDoacao.error img{
+    transition: ease-in-out 500ms;
+    visibility: visible;
 }
 
 
@@ -170,8 +184,8 @@
     }
     100%{
         transform: rotate(1080deg);
-        border: 1px solid #084444;
-        background-color: #084444;
+        border: 1px solid #129495;
+        background-color: #01494a;
     }
 }
 
@@ -181,12 +195,35 @@
     }
 }
 
+
+
+@keyframes spinError{
+    80%{
+        border: 2px solid transparent;
+        border-left: 2px solid black;
+    }
+    100%{
+        transform: rotate(1080deg);
+        border: 1px solid rgb(166, 2, 2);
+        background-color: #580202;
+    }
+}
+
 svg{
     width: fit-content;
     align-self: center;
     fill: transparent;
     transform: 0.4s;
     margin: 0 auto;
+}
+
+.errorImg{
+    text-align: center;
+    position: absolute;
+    visibility: hidden;
+    transform: 0.4s;
+    margin: 0 auto;
+    left: 22%;
 }
 
 
@@ -215,6 +252,7 @@ svg{
  border: 1.5px solid hsl(180, 79%, 15%, 0.5);
  display: flex;
  align-items: center;
+ position: relative;
 }
 
 .companhia{
@@ -313,7 +351,7 @@ svg{
 
 .submitButton{
     width: fit-content;
-    margin: 20px auto;
+    margin: 45px auto;
 
 }
 /*botão feito com a ajuda de Sumeet Yada*/

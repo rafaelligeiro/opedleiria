@@ -54,6 +54,7 @@ working
                                             <path
                                                 d="M0 11c2.761.575 6.312 1.688 9 3.438 3.157-4.23 8.828-8.187 15-11.438-5.861 5.775-10.711 12.328-14 18.917-2.651-3.766-5.547-7.271-10-10.917z" />
                                         </svg>
+                                        <img class="errorImg" style="width:10px; height:auto;" src="{{asset('img/close.png')}}" alt="xbutton">
                                     </div>
                                     </div>
 
@@ -118,13 +119,13 @@ working
 
         if (!pattern.test(quantidadeValue)) {
             console.error("Erro: A quantidade da doação deve corresponder ao padrão.");
+            document.querySelector('.verificarDoacao').classList.add('error');
         } else {
-            console.log("working");
 
-            // Adicionar a classe 'selected' apenas se o input não estiver ativo
             if (document.activeElement !== inputQuantidade) {
                 document.querySelectorAll('.verificarDoacao').forEach(function (item) {
                     item.classList.remove('selected');
+                    document.querySelector('.verificarDoacao').classList.remove('error');
                 });
 
                 document.querySelector('.verificarDoacao').classList.add('selected');
@@ -132,11 +133,11 @@ working
         }
     }
 
-    // Adicionar um listener para reverter a animação ao focar no input
     var inputQuantidade = document.querySelector('.quantidadeDoacao');
     inputQuantidade.addEventListener('focus', function() {
         document.querySelectorAll('.verificarDoacao').forEach(function (item) {
             item.classList.remove('selected');
+            document.querySelector('.verificarDoacao').classList.remove('error');
         });
     });
 </script>
