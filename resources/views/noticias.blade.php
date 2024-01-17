@@ -26,19 +26,18 @@
                         <div class="content">
                             <div>
                                 <h2 class="tituloNoticia">{{ $noticia->titulo }}</h2>
-                                <p class="categoriaNoticia">{{ $noticia->categoria }}</p>
                                 <p class="descricaoNoticia">{{ $noticia->descricao }}</p>
+                                <p class="categoriaNoticia">Categoria: {{ $noticia->categoria }}</p>
                             </div>
                             <div>
                                 <div class="boxes">
                                     <div class="box">
-                                        <p class="cima">{{ \Carbon\Carbon::parse($noticia->data)->format('H:i') }}</p>
+                                        <p class="cima">{{ \Carbon\Carbon::parse($noticia->data)->format('Y') }}</p>
                                         <p class="meio">{{ \Carbon\Carbon::parse($noticia->data)->format('d') }}</p>
                                         <p class="baixo">{{ \Carbon\Carbon::parse($noticia->data)->format('F') }}</p>
                                     </div>
                                 </div>
-                                <a class="button-sec" href="">Ler Noticia</a>
-
+                                <a class="button" href="">Ler Noticia</a>
                             </div>
                         </div>
                     </div>
