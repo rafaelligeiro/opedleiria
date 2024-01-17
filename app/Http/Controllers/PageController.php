@@ -31,6 +31,10 @@ class PageController extends Controller
         return view('eventos', compact('eventos'));
 
     }
+    public function noticias(){
+        return view('noticias');
+
+    }
     public function perfil(){
         $user = Auth::user();
 
