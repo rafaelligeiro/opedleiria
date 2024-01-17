@@ -3,7 +3,6 @@
 @section('title', 'Notícias OPEDLeiria')
 
 @section('styles')
-  @vite('resources/css/app.css')
   <link rel="stylesheet" href="{{asset('css/noticias.css')}}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

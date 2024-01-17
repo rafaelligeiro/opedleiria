@@ -18,6 +18,10 @@ h2 {
     color: #031C1D;
 }
 
+a {
+    text-decoration: none!important;
+}
+
 .hero-section {
     width: 100vw;
     height: 500px;
