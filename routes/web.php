@@ -47,4 +47,6 @@ Route::post('evento/{evento}/inscricoes',[InscricaoController::class,'store'])->
 Route::post('mensagens',[MensagemController::class,'store'])->name('mensagens.store');
 
 Route::post('makeDonation',[makeDonationController::class,'store'])->name('makeDonation.store');
+Route::get('MyDonationsEdit/{id}', [makeDonationController::class, 'MyDonationsEdit']);
+Route::post('MyDonationsEdit', [makeDonationController::class, 'update']);
 Auth::routes(['verify' => true]);
