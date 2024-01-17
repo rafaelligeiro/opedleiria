@@ -21,7 +21,7 @@
 
 <div class="form-group">
     <label for="inputDate">Data</label>
-    <input type="datetime-local" class="form-control" name="data" id="inputDate" value="{{ old('data', $noticia->data ? $noticia->data->format('Y-m-d\TH:i:s') : \Carbon\Carbon::now()->format('Y-m-d\TH:i:s')) }}" />
+    <input type="datetime-local" class="form-control" name="data" id="inputDate" value="{{ old('data', $noticia->data ? \Carbon\Carbon::parse($noticia->data)->format('Y-m-d\TH:i:s') : \Carbon\Carbon::now()->format('Y-m-d\TH:i:s')) }}" />
 </div>
 
 

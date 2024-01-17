@@ -18,9 +18,7 @@
 
 					<a href="{{route('admin.noticias.index')}}" class="btn btn-default">Cancelar</a>
 				</div>
-
 			</form>
-            @endif
 		</div>
 	</div>
 </div>

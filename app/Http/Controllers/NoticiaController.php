@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\NoticiaRequest;
 use Illuminate\Support\Facades\Storage;
 
-class EventoController extends Controller
+class NoticiaController extends Controller
 {
     public function index()
     {
@@ -33,7 +33,7 @@ class EventoController extends Controller
 
         Noticia::create($dadosNoticia);
 
-        return redirect()->route('admin.noticias.index')->with('success', 'Noticia criado com sucesso!');
+        return redirect()->route('admin.noticias.index')->with('success', 'Noticia criada com sucesso!');
     }
 
     public function edit(Noticia $noticia)
@@ -48,7 +48,7 @@ class EventoController extends Controller
 
         $noticia->update($dadosNoticia);
 
-        return redirect()->route('admin.noticias.index')->with('success', 'Noticia atualizado com sucesso!');
+        return redirect()->route('admin.noticias.index')->with('success', 'Noticia atualizada com sucesso!');
     }
 
     public function destroy(Noticia $noticia)
@@ -61,6 +61,6 @@ class EventoController extends Controller
         */
         $noticia->delete();
 
-        return redirect()->route('admin.noticias.index')->with('success', 'Noticia excluído com sucesso!');
+        return redirect()->route('admin.noticias.index')->with('success', 'Noticia excluída com sucesso!');
     }
 }

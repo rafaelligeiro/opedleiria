@@ -72,7 +72,7 @@
                                                     href="{{ route('admin.users.show', $user) }}"><i
                                                         class="fas fa-eye fa-xs"></i></a>
                                                 <a class="btn btn-xs btn-warning btn-p"
-                                                    href="{{ route('admin.users.edit', $user) }}"><i
+                                                    href="{{ route('perfil', $user) }}"><i
                                                         class="fas fa-pen fa-xs"></i></a>
                                                 <form method="POST" action="{{ route('admin.users.destroy', $user) }}"
                                                     role="form" class="inline"

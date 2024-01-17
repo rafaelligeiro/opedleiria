@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Dashboard - CTeSP Desenvolvimento Web e Multimédia</title>
+    <title>Dashboard - OPEDLeiria</title>
 
     <!-- Custom fonts for this template -->
     <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel=" stylesheet" type="text/css">
@@ -82,6 +82,22 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseNoticias"
+                    aria-expanded="true" aria-controls="collapseNoticias">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Notícias</span>
+                </a>
+                <div id="collapseNoticias" class="collapse" aria-labelledby="headingNoticias" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Noticias:</h6>
+                        <a class="collapse-item" href="{{route('admin.noticias.index')}}">Listagem</a>
+                        <a class="collapse-item" href="{{route('admin.noticias.create')}}">Criar Nova</a>
+                        <div class="collapse-divider"></div>
+                    </div>
+                </div>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDonation"
                     aria-expanded="true" aria-controls="collapseDonation">
                     <i class="fas fa-fw fa-folder"></i>
@@ -146,7 +162,7 @@
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                     aria-labelledby="userDropdown">
                                     <a class="dropdown-item"
-                                        href="{{ route('admin.users.edit', auth()->user()) }}">
+                                        href="{{ route('perfil', auth()->user()) }}">
                                         <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                         Perfil
                                     </a>

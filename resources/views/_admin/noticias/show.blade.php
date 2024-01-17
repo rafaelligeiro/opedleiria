@@ -14,7 +14,6 @@
                 <div><strong>Descrição:</strong> {{ $noticia->descricao }} </div>
                 <div><strong>Data:</strong> {{ $noticia->data }} </div>
                 <br>
-                @endif
             </div>
         </div>
     </div>
