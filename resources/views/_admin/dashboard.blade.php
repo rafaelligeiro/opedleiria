@@ -2,7 +2,7 @@
 @section('content')
     <div class="container-fluid">
         <div class="row">
-            <div class="col-4">
+            <div style="margin-top:20px" class="col-4">
                 <div class="card shadow">
                     <div class="card-header p-4">
                         <h1 style="display:inline;"> {{ $count_users }} </h1>
@@ -10,7 +10,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div style="margin-top:20px" class="col-4">
                 <div class="card shadow">
                     <div class="card-header p-4">
                         <h1 style="display:inline;"> {{ $count_eventos }} </h1>
@@ -18,11 +18,19 @@
                     </div>
                 </div>
             </div>
-            <div class="col-4">
+            <div style="margin-top:20px" class="col-4">
                 <div class="card shadow">
                     <div class="card-header p-4">
                         <h1 style="display:inline;"> {{ $count_doacoes }} </h1>
                         <h3 style="display:inline;"> Doacões </h3>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top:20px" class="col-4">
+                <div class="card shadow">
+                    <div class="card-header p-4">
+                        <h1 style="display:inline;"> {{ $count_noticias }} </h1>
+                        <h3 style="display:inline;"> Notícias </h3>
                     </div>
                 </div>
             </div>

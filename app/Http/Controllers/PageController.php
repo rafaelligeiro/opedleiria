@@ -44,6 +44,11 @@ class PageController extends Controller
         return view('noticias', compact('noticias'));
 
     }
+    public function inscricoes(){
+        $inscricoes = Inscricao::all();
+        return view('inscricoes', compact('inscricoes'));
+
+    }
     public function perfil(){
         $user = Auth::user();
 

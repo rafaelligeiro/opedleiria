@@ -18,10 +18,10 @@
                     <a class="nav-link" href="{{route('eventos')}}">Eventos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-disabled="true">Loja</a>
+                    <a class="nav-link">Loja</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" aria-disabled="true">Contactos</a>
+                    <a class="nav-link">Contactos</a>
                 </li>
             </ul>
             <form id="pesquisa" class="d-flex" role="search">
@@ -31,3 +31,6 @@
         </div>
     </div>
   </nav>
+
+
+
