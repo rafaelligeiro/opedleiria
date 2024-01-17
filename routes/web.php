@@ -41,6 +41,7 @@ Route::group(['middleware' => ['auth', 'verified'], 'as' => 'admin.','prefix' =>
     Route::resource('/noticias', NoticiaController::class);
     Route::resource('/doacoes', DoacaoController::class);
     Route::resource('/mensagens', MensagemController::class);
+    Route::resource('/inscricoes', InscricaoController::class);
 });
 Route::get('evento/{evento}/inscricoes',[InscricaoController::class,'create'])->name('inscricoes.create')->middleware(['auth', 'verified']);
 Route::post('evento/{evento}/inscricoes',[InscricaoController::class,'store'])->name('inscricoes.store')->middleware(['auth', 'verified']);

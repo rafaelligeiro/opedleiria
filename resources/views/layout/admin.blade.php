@@ -127,6 +127,21 @@
                 </div>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseInscricao"
+                    aria-expanded="true" aria-controls="collapseInscricao">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Inscrições</span>
+                </a>
+                <div id="collapseInscricao" class="collapse" aria-labelledby="headingInscricao" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Inscrições:</h6>
+                        <a class="collapse-item" href="{{route('admin.inscricoes.index')}}">Listagem</a>
+                        <div class="collapse-divider"></div>
+                    </div>
+                </div>
+            </li>
+
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
