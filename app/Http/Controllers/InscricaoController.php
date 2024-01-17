@@ -29,7 +29,7 @@ class InscricaoController extends Controller
         return view('_admin.inscricoes.edit', compact('inscricao'));
     }
 
-    public function update(InscricaoRequest $request, Evento $evento)
+    public function update(InscricaoRequest $request, Inscricao $inscricao)
     {
         $dadosInscricao = $request->validated();
 
@@ -43,6 +43,7 @@ class InscricaoController extends Controller
     {
         return view('inscricao',compact('evento'));
     }
+    
     public function store(InscricaoRequest $request,Evento $evento)
     {
         $fields = $request->validated(); //all
