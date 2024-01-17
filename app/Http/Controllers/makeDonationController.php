@@ -22,4 +22,14 @@ class makeDonationController extends Controller
         $donation->save();
         return redirect()->back()->with('success', 'Doação efectuada com sucesso');
     }
+
+    public function MyDonations()
+{
+    $userId = auth()->id();
+
+    $doacoes = Doacao::where('id_utilizador', $userId)->get();
+
+    return view('MyDonations', compact('doacoes'));
+}
+
 }

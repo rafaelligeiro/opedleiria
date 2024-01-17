@@ -20,6 +20,7 @@ class DoacaoController extends Controller
         return view('_admin.doacoes.show', compact('doacao'));
     }
 
+    
     /*public function create()
     {
         $doacao =new Doacao();

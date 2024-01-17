@@ -26,6 +26,14 @@
                     </div>
                 </div>
             </div>
+            <div style="margin-top:20px" class="col-4">
+                <div class="card shadow">
+                    <div class="card-header p-4">
+                        <h1 style="display:inline;"> {{ $count_mensagens }} </h1>
+                        <h3 style="display:inline;"> Mensagens </h3>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

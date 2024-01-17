@@ -112,6 +112,21 @@
                 </div>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseMensagem"
+                    aria-expanded="true" aria-controls="collapseMensagem">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Mensagens</span>
+                </a>
+                <div id="collapseMensagem" class="collapse" aria-labelledby="headingMensagem" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Mensagens:</h6>
+                        <a class="collapse-item" href="{{route('admin.mensagens.index')}}">Listagem</a>
+                        <div class="collapse-divider"></div>
+                    </div>
+                </div>
+            </li>
+
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">

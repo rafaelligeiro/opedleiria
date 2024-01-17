@@ -26,6 +26,7 @@ use App\Http\Controllers\makeDonationController;
 Route::get('/',[PageController::class,'index'])->name('index');
 Route::get('/message',[PageController::class,'message'])->name('message');
 Route::get('/donate',[PageController::class,'donate'])->name('donate');
+Route::get('/MyDonations', [makeDonationController::class, 'MyDonations'])->name('MyDonations.show')->middleware('auth');
 Route::get('/sobre',[PageController::class,'sobre'])->name('sobre');
 Route::get('/eventos',[PageController::class,'eventos'])->name('eventos');
 Route::get('/noticias',[PageController::class,'noticias'])->name('noticias');
@@ -39,6 +40,7 @@ Route::group(['middleware' => ['auth', 'verified'], 'as' => 'admin.','prefix' =>
     Route::resource('/eventos', EventoController::class);
     Route::resource('/noticias', NoticiaController::class);
     Route::resource('/doacoes', DoacaoController::class);
+    Route::resource('/mensagens', MensagemController::class);
 });
 Route::get('evento/{evento}/inscricoes',[InscricaoController::class,'create'])->name('inscricoes.create')->middleware(['auth', 'verified']);
 Route::post('evento/{evento}/inscricoes',[InscricaoController::class,'store'])->name('inscricoes.store')->middleware(['auth', 'verified']);

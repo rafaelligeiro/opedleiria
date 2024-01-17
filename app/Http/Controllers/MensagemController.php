@@ -8,6 +8,20 @@ use App\Http\Requests\MensagemRequest;
 
 class MensagemController extends Controller
 {
+
+    public function index()
+    {
+        $mensagens = Mensagem::all();
+        return view('_admin.mensagens.index', compact('mensagens'));
+    }
+
+    public function show(Mensagem $mensagem)
+    {
+        return view('_admin.mensagens.show', compact('mensagem'));
+    }
+
+
+
     public function store(MensagemRequest $request)
     {
         $fields = $request->validated();
