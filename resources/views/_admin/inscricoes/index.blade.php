@@ -24,7 +24,7 @@
               <td>{{$inscricao->nome}}</td>
               <td>{{$inscricao->telefone}}</td>
               <td>{{$inscricao->quantidade}}</td>
-              <td>{{$inscricao->id_evento}}</td>
+              <td>{{$inscricao->evento->titulo}}</td>
               <td nowrap>
                 <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.inscricoes.show',$inscricao)}}"><i class="fas fa-eye fa-xs"></i></a>
                 <a class="btn btn-xs btn-warning btn-p" href="{{route('admin.inscricoes.edit',$inscricao)}}"><i class="fas fa-pen fa-xs"></i></a>

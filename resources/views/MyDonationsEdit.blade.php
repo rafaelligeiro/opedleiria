@@ -4,7 +4,6 @@
 
 
 @section('styles')
-    @vite('resources/css/app.css')
     <link rel="stylesheet" href="{{ asset('css/MyDonationsEdit.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

@@ -3,7 +3,6 @@
 @section('title', 'Fazer uma Doação')
 
 @section('styles')
-@vite('resources/css/app.css')
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="{{asset('css/DonationStyle.css')}}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
