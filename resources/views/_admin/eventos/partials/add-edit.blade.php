@@ -5,8 +5,7 @@
 </div>
 <div class="form-group">
     <label for="inputDate">Data</label>
-    <input type="datetime_local" class="form-control"
-    name="data" id="inputDate" value="{{old('data',$evento->data??date("Y-m-d H:i:s"))}}"/>
+    <input type="datetime-local" class="form-control" name="data" id="inputDate" value="{{ old('data', $evento->data ? \Carbon\Carbon::parse($evento->data)->format('Y-m-d\TH:i:s') : \Carbon\Carbon::now()->format('Y-m-d\TH:i:s')) }}" />
 </div>
 <div class="form-group">
     <label for="inputDescription">Descrição</label>
