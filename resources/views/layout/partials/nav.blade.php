@@ -18,6 +18,9 @@
                     <a class="nav-link" href="{{route('eventos')}}">Eventos</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="{{route('noticias')}}">Noticias</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link">Loja</a>
                 </li>
                 <li class="nav-item">
