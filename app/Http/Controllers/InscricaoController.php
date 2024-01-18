@@ -43,7 +43,7 @@ class InscricaoController extends Controller
     {
         return view('inscricao',compact('evento'));
     }
-    
+
     public function store(InscricaoRequest $request,Evento $evento)
     {
         $fields = $request->validated(); //all
@@ -57,12 +57,17 @@ class InscricaoController extends Controller
     }
 
 
-    public function destroy(Inscricao $inscricao)
+    public function destroy($id)
     {
 
+        try {
+            $inscricao = Inscricao::findOrFail($id);
+            $inscricao->delete();
 
-        $inscricao->delete();
-
-        return redirect()->route('admin.inscricoes.index')->with('success', 'A inscricão foi excluida com sucesso!');
+        return redirect()->route('admin.inscricoes.index')->with('success', 'A inscrição foi excluída com sucesso!');
+        } catch (\Exception $e) {
+            dd($e->getMessage()); // Exibir mensagem de erro
+            return redirect()->route('admin.inscricoes.index')->with('error', 'Erro ao excluir inscrição.');
+        }
     }
 }

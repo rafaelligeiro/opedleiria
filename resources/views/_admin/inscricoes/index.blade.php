@@ -27,7 +27,9 @@
               <td>{{$inscricao->id_evento}}</td>
               <td nowrap>
                 <a class="btn btn-xs btn-primary btn-p" href="{{route('admin.inscricoes.show',$inscricao)}}"><i class="fas fa-eye fa-xs"></i></a>
+
                 <a class="btn btn-xs btn-warning btn-p" href="{{route('admin.inscricoes.edit',$inscricao)}}"><i class="fas fa-pen fa-xs"></i></a>
+
                 <form method="POST" action="{{route('admin.inscricoes.destroy',$inscricao)}}" role="form" class="inline"
                 onsubmit="return confirm('Confirma que pretende eliminar este registo?');">
                   @csrf
