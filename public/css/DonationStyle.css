@@ -52,18 +52,21 @@
 
 .nomes{
    width: fit-content;
-   margin: 30px auto;
-   text-align: center;
+   margin: 30px 60px;
    display: flex;
    gap: 5rem;
 }
 
+.nomes .disabled{
+    display: none;
+}
+
 .radio{
     display: flex;
-    width: fit-content;
-    margin: 0 auto;
-    gap: 5rem;
     align-items: flex-end;
+    width: fit-content;
+    margin: 30px auto;
+    gap: 5rem;
 }
 
 
@@ -101,12 +104,30 @@
 
 
 
-.nomes .text{
+.nomes .textEmail{
     width: fit-content;
     font-size: 16px;
-    margin: 0;
     font-weight: 600;
 }
+
+.nomes .textNome{
+    width: fit-content;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.nomes .nomeLabel{
+    width: fit-content;
+    font-size: 16px;
+    font-weight: 600;    
+}
+
+.nomes .emailLabel{
+    width: fit-content;
+    font-size: 16px;
+    font-weight: 600;    
+}
+
 
 .nomes .nomeInput{
     background-color: #F9FAFB;
@@ -354,6 +375,13 @@ svg{
     margin: 45px auto;
 
 }
+
+ .disabled{
+   background-color: #293838;
+   cursor: not-allowed;
+
+}
+
 /*botão feito com a ajuda de Sumeet Yada*/
 
 

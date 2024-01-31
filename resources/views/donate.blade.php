@@ -30,12 +30,14 @@ working
                     <h2 class="texth2" >Todas as doações, por mais pequenas que sejam <span class="ajudamSpan">ajudam</span></h2>
                     <div class="nomes">
                         <div class="grupo-input">
-                            <h1 class="text">Nome</h1>
+                            <h1 class="textNome">Nome</h1>
                             <input id="inputID" type="text" name="nome" class="nomeInput" placeholder="O seu nome">
+                            <label class="nomeLabel disabled" for="nome">O nome está <span style="color:#9C1417;" class="nomeErrado disabled">errado</span><span style="color:#0D9495;" class="nomeCerto disabled">certo</span></label>
                         </div>
                         <div class="grupo-input">
-                            <h1 class="text">Email</h1>
+                            <h1 class="textEmail">Email</h1>
                             <input id="inputID" type="text" name="email" class="emailInput" placeholder="O seu email">
+                            <label class="emailLabel disabled" for="email">O email está <span style="color:#9C1417;" class="emailErrado disabled">errado</span><span style="color:#0D9495;" class="emailCerto disabled">certo</span></label>
                         </div>
                     </div>
 
@@ -88,7 +90,7 @@ working
                     </div>
 
                     <div class="submitButton">
-                        <button type="submit" id="btn" class="buttonFinal">
+                        <button type="submit" id="btn" class="buttonFinal disabled">
                             <p id="btnText" style="margin-bottom:0;" >Doar</p>
                             <div class="check-box">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
@@ -110,12 +112,13 @@ working
 @section('scripts')
 
 <script>
+
+    
+
     function selecionarOpcao(element) {
         var inputQuantidade = document.querySelector('.quantidadeDoacao');
         var quantidadeValue = inputQuantidade.value;
-
-        var pattern = /^[1-9][0-9]*$/;
-
+      
         if (!pattern.test(quantidadeValue)) {
             console.error("Erro: A quantidade da doação deve corresponder ao padrão.");
             document.querySelector('.verificarDoacao').classList.add('error');
@@ -139,6 +142,60 @@ working
             document.querySelector('.verificarDoacao').classList.remove('error');
         });
     });
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+    var button = document.querySelector('.buttonFinal');
+    var nomeInput = document.querySelector('.nomeInput');
+    var nomeLabel = document.querySelector('.nomeLabel');
+    var spanNomeCerto = document.querySelector('.nomeCerto');
+    var spanNomeErrado = document.querySelector('.nomeErrado');
+    var spanEmailCerto = document.querySelector('.emailCerto');
+    var spanEmailErrado = document.querySelector('.emailErrado');
+    var emailInput = document.querySelector('.emailInput');
+    var emailLabel = document.querySelector('.emailLabel');
+
+    if(button.classList.contains('disabled'))
+        {
+         button.disabled = true;   
+        }
+        else{
+            button.disabled = false;
+        }
+
+    nomeInput.addEventListener('blur', function() {
+        var nomeValue = nomeInput.value.trim(); 
+        var pattern = /^[A-Za-zÁÉÍÓÚáéíóúÀÈÌÒÙàèìòùÂÊÎÔÛâêîôûÄËÏÖÜäëïöüÇçÑñ']+([ -][A-Za-zÁÉÍÓÚáéíóúÀÈÌÒÙàèìòùÂÊÎÔÛâêîôûÄËÏÖÜäëïöüÇçÑñ']+)*$/;
+        nomeLabel.classList.remove('disabled');
+        if (!pattern.test(nomeValue)) {
+            button.classList.add('disabled');
+            button.disabled = true;
+            spanNomeErrado.classList.remove('disabled');
+            spanNomeCerto.classList.add('disabled');
+        } else {
+            button.classList.remove('disabled');
+            button.disabled = false;
+            spanNomeErrado.classList.add('disabled');
+            spanNomeCerto.classList.remove('disabled');
+        }
+     });
+
+     emailInput.addEventListener('blur', function() {
+        var emailValue = emailInput.value.trim(); 
+
+        var pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        if (!pattern.test(emailValue)) {
+            emailLabel.classList.remove('disabled');
+            spanEmailErrado.classList.remove('disabled');
+            spanEmailCerto.classList.add('disabled');
+        } else {
+            spanEmailErrado.classList.add('disabled');
+            spanEmailCerto.classList.remove('disabled');
+        }
+     });
+    });
+
 </script>
 
 
