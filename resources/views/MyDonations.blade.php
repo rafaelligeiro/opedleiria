@@ -40,12 +40,31 @@
                                 <td>{{ $doacao->descricao }}</td>
                                 <td>{{ $doacao->email }}</td>
                                 <td class="actiontd">
-                                    <a href="{{ "MyDonationsEdit/".$doacao->id }}"><div onclick="OpenName()" id="actionbtnOpen" class="actionbtn"><i class="fas fa-pencil-alt"></i></div></a>
+                                    <a href="#" onclick="openEditForm({{ $doacao->id }})">
+                                        <div id="actionbtnOpen" class="actionbtn"><i class="fas fa-pencil-alt"></i></div>
+                                    </a>
                                 </td>
+
                             </form>
                         </tr>
                     @endforeach
                 </tbody>
+                <div class="editForm" id="editForm" >
+    <div class="all">
+        <div class="box">
+            <form action="/MyDonationsEdit" method="POST">
+                @csrf
+                <input type="hidden" name="id" value="">
+                <span class="text-center">Mudar o Nome</span>
+                <div class="input-container">
+                    <input type="text" name="nome" required="">
+                    <label>Novo Nome</label>
+                </div>
+                <button type="submit" class="btn">Alterar nome</button>
+            </form>
+        </div>
+    </div>
+</div>
             </table>
         </div>
     @else
@@ -64,10 +83,58 @@
             </table>
         </div>    
     @endif
+
+
 </div>
+
+
+<style>
+    .editForm {
+        position:absolute;
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        display: none;
+        width: fit-content;
+        left: 35%;
+        margin:40px;
+    }
+
+    .editForm .input-container input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    .editForm .btn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+</style>
+
 @endsection
 
 @section('scripts')
 
+    <script>
+        function openEditForm(id) {
+            // Obter o formulário de edição
+            var editForm = document.getElementById('editForm');
+
+            // Definir o valor do campo de ID do formulário de edição
+            editForm.querySelector('input[name="id"]').value = id;
+
+            // Exibir o formulário de edição
+            editForm.style.display = 'block';
+        }
+    </script>
 
 @endsection
+
