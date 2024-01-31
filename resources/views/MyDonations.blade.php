@@ -14,6 +14,7 @@
 @endsection
 
 @section('content')
+<div id="everything">
 <div class="card-body">
     @if(isset($doacoes) && count($doacoes) > 0)
         <div class="tabelaTop">
@@ -49,22 +50,7 @@
                         </tr>
                     @endforeach
                 </tbody>
-                <div class="editForm" id="editForm" >
-    <div class="all">
-        <div class="box">
-            <form action="/MyDonationsEdit" method="POST">
-                @csrf
-                <input type="hidden" name="id" value="">
-                <span class="text-center">Mudar o Nome</span>
-                <div class="input-container">
-                    <input type="text" name="nome" required="">
-                    <label>Novo Nome</label>
-                </div>
-                <button type="submit" class="btn">Alterar nome</button>
-            </form>
-        </div>
-    </div>
-</div>
+
             </table>
         </div>
     @else
@@ -86,54 +72,51 @@
 
 
 </div>
+</div>
+<div id="overlay"></div>
 
+<div id="editForm">
+<div class="editForm">
+    <div class="all">
+        <div class="box">
+            <form action="/MyDonationsEdit" method="POST">
+                @csrf
+                <input type="hidden" name="id" value="">
+                <span class="text-center">Mudar o Nome</span>
+                <div class="input-container">
+                    <input type="text" name="nome" required="">
+                    <label>Novo Nome</label>
+                </div>
+                <button type="submit" class="btn">Alterar nome</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
 
-<style>
-    .editForm {
-        position:absolute;
-        background-color: #f9f9f9;
-        padding: 20px;
-        border-radius: 10px;
-        display: none;
-        width: fit-content;
-        left: 35%;
-        margin:40px;
-    }
-
-    .editForm .input-container input[type="text"] {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-sizing: border-box;
-    }
-
-    .editForm .btn {
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-</style>
 
 @endsection
 
 @section('scripts')
 
     <script>
-        function openEditForm(id) {
-            // Obter o formulário de edição
-            var editForm = document.getElementById('editForm');
+    function openEditForm(id) {
+    // Exibir o overlay
+    var overlay = document.getElementById('overlay');
+    overlay.style.display = 'block';
 
-            // Definir o valor do campo de ID do formulário de edição
-            editForm.querySelector('input[name="id"]').value = id;
+    // Obter o formulário de edição
+    var editForm = document.getElementById('editForm');
 
-            // Exibir o formulário de edição
-            editForm.style.display = 'block';
-        }
+    // Definir o valor do campo de ID do formulário de edição
+    editForm.querySelector('input[name="id"]').value = id;
+
+    // Exibir o formulário de edição
+    editForm.style.display = 'block';
+}
+
+
+
     </script>
 
 @endsection
