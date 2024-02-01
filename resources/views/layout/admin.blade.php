@@ -142,6 +142,22 @@
                 </div>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePatrocinador"
+                    aria-expanded="true" aria-controls="collapsePatrocinador">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Patrocinios</span>
+                </a>
+                <div id="collapsePatrocinador" class="collapse" aria-labelledby="headingPatrocinador" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Patrocinios:</h6>
+                        <a class="collapse-item" href="{{route('admin.patrocinios.index')}}">Listagem</a>
+                        <a class="collapse-item" href="{{route('admin.patrocinios.create')}}">Criar Novo</a>
+                        <div class="collapse-divider"></div>
+                    </div>
+                </div>
+            </li>
+
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">

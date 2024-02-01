@@ -6,6 +6,8 @@ use App\Models\Doacao;
 use App\Models\Evento;
 use App\Models\Noticia;
 use App\Models\Mensagem;
+use App\Models\Inscricao;
+use App\Models\Patrocinio;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\PerfilRequest;
@@ -78,6 +80,8 @@ class PageController extends Controller
     public function admindashboard()
     {
         $count_eventos = Evento::count();
+        $count_patrocinios = Patrocinio::count();
+        $count_inscricoes = Inscricao::count();
         $count_doacoes = Doacao::count();
         $count_mensagens = Mensagem::count();
         $count_noticias = Noticia::count();
@@ -85,7 +89,7 @@ class PageController extends Controller
         $count_users_per_role = User::select('role', DB::raw('count(*) as
        count'))->groupBy('role')->get();
         return view('_admin.dashboard', compact('count_doacoes', 'count_mensagens',
-            'count_eventos', 'count_users','count_noticias', 'count_users_per_role'));
+            'count_eventos', 'count_patrocinios', 'count_inscricoes', 'count_users','count_noticias', 'count_users_per_role'));
 	return view('_admin.dashboard');
     }
 }

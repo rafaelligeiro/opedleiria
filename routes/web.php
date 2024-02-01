@@ -29,6 +29,7 @@ Route::get('/donate',[PageController::class,'donate'])->name('donate');
 Route::get('/MyDonations', [makeDonationController::class, 'MyDonations'])->name('MyDonations.show');
 Route::get('/sobre',[PageController::class,'sobre'])->name('sobre');
 Route::get('/eventos',[PageController::class,'eventos'])->name('eventos');
+Route::get('/patrocinios',[PageController::class,'patrocinios'])->name('patrocinios');
 Route::get('/noticias',[PageController::class,'noticias'])->name('noticias');
 Route::get('/perfil',[PageController::class,'perfil'])->name('perfil');
 Route::put('/perfil',[PageController::class,'updatePerfil'])->name('updatePerfil');
@@ -38,6 +39,7 @@ Route::group(['middleware' => ['auth', 'verified'], 'as' => 'admin.','prefix' =>
     Route::delete('/users/{user}/destroy_photo',[UserController::class, 'destroy_photo'])->name('users.destroyPhoto');
     Route::resource('users', UserController::class);
     Route::resource('/eventos', EventoController::class);
+    Route::resource('/patrocinios', EventoController::class);
     Route::resource('/noticias', NoticiaController::class);
     Route::resource('/doacoes', DoacaoController::class);
     Route::resource('/mensagens', MensagemController::class);
