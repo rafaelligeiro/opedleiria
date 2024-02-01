@@ -17,7 +17,11 @@
             com deficiência que diariamente contam connosco.
         </p>
         <button class="button-sec">Saber Mais</button>
-        <button class="button-white">Doar</button>
+        @if (Auth::check())
+            <a href="{{ asset('donate') }}"><button class="button-white">Doar</button></a>
+        @else
+            <a href="{{ route('login') }}"><button class="button-white">Doar</button></a>
+        @endif
     </div>
 </div>
 <div class="container">

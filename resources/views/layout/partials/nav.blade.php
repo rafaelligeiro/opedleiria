@@ -24,7 +24,7 @@
                     <a class="nav-link">Loja</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link">Contactos</a>
+                    <a class="nav-link" href="{{route('message')}}">Contactos</a>
                 </li>
             </ul>
             <form id="pesquisa" class="d-flex" role="search">
