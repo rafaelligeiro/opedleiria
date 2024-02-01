@@ -315,3 +315,20 @@ a {
     width: 100%;
 }
 
+
+.linhaP{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentP h2{
+    color: rgb(170, 170, 170);
+}
+
+.patrocinio img{
+    width: 25%;
+    height: auto;
+    -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}

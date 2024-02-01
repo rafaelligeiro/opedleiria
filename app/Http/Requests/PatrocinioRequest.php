@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Http\Requests\PatrocinioRequest;
 use Illuminate\Foundation\Http\FormRequest;
 
 class PatrocinioRequest extends FormRequest

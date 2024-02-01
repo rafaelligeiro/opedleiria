@@ -9,6 +9,7 @@ use App\Http\Controllers\EventoController;
 use App\Http\Controllers\NoticiaController;
 use App\Http\Controllers\MensagemController;
 use App\Http\Controllers\InscricaoController;
+use App\Http\Controllers\PatrocinioController;
 use App\Http\Controllers\makeDonationController;
 
 /*
@@ -39,11 +40,11 @@ Route::group(['middleware' => ['auth', 'verified'], 'as' => 'admin.','prefix' =>
     Route::delete('/users/{user}/destroy_photo',[UserController::class, 'destroy_photo'])->name('users.destroyPhoto');
     Route::resource('users', UserController::class);
     Route::resource('/eventos', EventoController::class);
-    Route::resource('/patrocinios', EventoController::class);
     Route::resource('/noticias', NoticiaController::class);
     Route::resource('/doacoes', DoacaoController::class);
     Route::resource('/mensagens', MensagemController::class);
     Route::resource('/inscricoes', InscricaoController::class)->parameters(['inscricoes'=>'inscricao']);
+    Route::resource('/patrocinios', PatrocinioController::class);
 });
 Route::get('evento/{evento}/inscricoes',[InscricaoController::class,'create'])->name('inscricoes.create')->middleware(['auth', 'verified']);
 Route::post('evento/{evento}/inscricoes',[InscricaoController::class,'store'])->name('inscricoes.store')->middleware(['auth', 'verified']);

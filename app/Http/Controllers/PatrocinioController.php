@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Patrocinio;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\PatrocinioRequest;
+use App\Http\Controllers\PatrocinioController;
+
 
 class PatrocinioController extends Controller
 {

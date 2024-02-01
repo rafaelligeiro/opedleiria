@@ -18,9 +18,10 @@ class PageController extends Controller
 {
     public function index(){
         $eventos = Evento::all();
+        $patrocinios = Patrocinio::all();
         $doacoes = Doacao::all();
         $noticias = Noticia::all();
-        return view('index', compact('doacoes', 'eventos'));
+        return view('index', compact('doacoes', 'eventos', 'patrocinios'));
     }
     public function message(){
         return view('message');
@@ -39,6 +40,11 @@ class PageController extends Controller
     public function eventos(){
         $eventos = Evento::all();
         return view('eventos', compact('eventos'));
+
+    }
+    public function patrocinios(){
+        $patrocinios = Patrocinio::all();
+        return view('patrocinios', compact('patrocinios'));
 
     }
     public function noticias(){

@@ -104,6 +104,21 @@
             <img src="{{ asset('img/mundo-index.png') }}" alt="" />
         </div>
     </div>
+    <div class="linhaP">
+        @foreach($patrocinios as $patrocinio)
+        <div class="patrocinio">
+            <img
+                src="{{ asset($patrocinio->imagem) }}"
+                alt="{{ $patrocinio->nome_patrocinador }}"
+            />
+            <div class="contentP">
+                    <h2 class="nome_patrocinador">
+                        {{ $patrocinio->nome_patrocinador }}
+                    </h2>
+            </div>
+        </div>
+        @endforeach
+    </div>
     <div class="linha4">
         @foreach($eventos->take(3) as $evento)
         <div class="evento">
@@ -141,23 +156,7 @@
         </div>
         @endforeach
     </div>
-    <div class="linha4">
-        @foreach($patrocinios->take(3) as $patrocinio)
-        <div class="patrocinio">
-            <img
-                src="{{ asset($patrocinio->imagem) }}"
-                alt="{{ $patrocinio->titulo }}"
-            />
-            <div class="content">
-                <div>
-                    <h2 class="titulopatrocinio">
-                        {{ $patrocinio->nome_patrocinador }}
-                    </h2>
-                </div>
-            </div>
-        </div>
-        @endforeach
-    </div>
+
 </div>
 @endsection @section('scripts')
 <!-- opcional-->
