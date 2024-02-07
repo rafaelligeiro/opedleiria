@@ -13,8 +13,8 @@ body{
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(5px); 
-  z-index: 998; 
+  backdrop-filter: blur(5px);
+  z-index: 998;
   display: none;
 }
 
@@ -38,7 +38,7 @@ body{
 }
 
 .editForm .btn {
-  background-color: #4CAF50;
+  background-color: #74B6B7;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -116,20 +116,20 @@ body{
     height: 50vh;
     margin: 50px;
     background-color: rgba(5, 138, 140, 0.5);
-    position: relative; 
+    position: relative;
     border-radius: 10px;
 
 }
 
-  
+
 
 
 .no_Donations {
-    text-align: center; 
-    position: absolute; 
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .no_Donations_message{

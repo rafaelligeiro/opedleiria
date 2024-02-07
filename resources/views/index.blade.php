@@ -49,10 +49,17 @@
                     <div class="content">
                         <h3>{{ $doacao->nome }}</h3>
                         <p>{{ $doacao->descricao }}</p>
+
                     </div>
+
                 </div>
                 @endforeach
             </div>
+            @if (Auth::check())
+            <a href="{{ asset('MyDonations') }}"><button style="margin:10px auto;" class="button-sec">As minhas doações</button></a>
+        @else
+            
+        @endif
         </div>
     </div>
     <div class="linha2">
