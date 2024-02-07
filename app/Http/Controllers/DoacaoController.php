@@ -20,7 +20,7 @@ class DoacaoController extends Controller
         return view('_admin.doacoes.show', compact('doacao'));
     }
 
-    
+
     /*public function create()
     {
         $doacao =new Doacao();
@@ -71,11 +71,20 @@ class DoacaoController extends Controller
     }
     */
 
-    public function destroy(Doacao $doacao)
+    public function destroy($id)
     {
-        $doacao->delete();
+        try {
+            $doacao = Doacao::findOrFail($id);
+            $doacao->delete();
 
-        return redirect()->route('admin.doacoes.index')->with('success', 'Doacao excluída com sucesso!');
+        return redirect()->route('admin.doacoes.index')->with('success', 'Doação excluída com sucesso!');
+        } catch (\Exception $e) {
+            dd($e->getMessage());
+            return redirect()->route('admin.doacoes.index')->with('error', 'Erro ao excluir doação.');
+        }
+
+
+
     }
 }
 

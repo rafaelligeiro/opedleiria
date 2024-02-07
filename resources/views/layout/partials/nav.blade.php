@@ -27,10 +27,16 @@
                     <a class="nav-link" href="{{route('message')}}">Contactos</a>
                 </li>
             </ul>
-            <form id="pesquisa" class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Pesquisar.." aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+            @if (Auth::check())
+            <a href="{{ asset('MyDonations') }}"><button style="background-color:#15B7B9;  border:0;" type="button" class="btn btn-primary">Doações</button></a>
+            <form action="{{route('logout')}}" method="post" class="inline">
+                @csrf
+                <a><button style="margin-left:20px; background-color:#15B7B9; border:0;" type="submit" class="btn btn-primary">Logout</button></a>
             </form>
+            @else
+            <a href="{{ route('login') }}"><button style="background-color:#15B7B9;  border:0;" type="button" class="btn btn-primary">Login</button></a>
+            <a href="{{ route('register') }}"><button style="margin-left:20px; background-color:#15B7B9;  border:0;" type="button" class="btn btn-primary">Registar</button></a>
+            @endif
         </div>
     </div>
   </nav>
