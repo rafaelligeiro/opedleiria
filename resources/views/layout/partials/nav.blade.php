@@ -9,7 +9,7 @@
             <ul id="links" class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
                 style="--bs-scroll-height: 100px;">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    <a class="nav-link active" aria-current="page" href="{{route('index')}}">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('sobre')}}">Sobre</a>

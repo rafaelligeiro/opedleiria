@@ -58,7 +58,7 @@
             @if (Auth::check())
             <a href="{{ asset('MyDonations') }}"><button style="margin:10px auto;" class="button-sec">As minhas doações</button></a>
         @else
-            
+
         @endif
         </div>
     </div>
@@ -133,10 +133,7 @@
     <div class="linha4">
         @foreach($eventos->take(3) as $evento)
         <div class="evento">
-            <img
-                src="{{ asset($evento->imagem) }}"
-                alt="{{ $evento->titulo }}"
-            />
+            <img src="{{ asset('storage/imagens_eventos/'.$evento->imagem) }}" alt="{{ $evento->titulo }}">
             <div class="content">
                 <div>
                     <h2 class="tituloEvento">{{ $evento->titulo }}</h2>
